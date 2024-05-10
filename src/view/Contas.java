@@ -6,14 +6,14 @@ package view;
 
 /**
  *
- * @author Paulo
+ * @author unifphirata
  */
-public class Comprar extends javax.swing.JFrame {
+public class Contas extends javax.swing.JFrame {
 
     /**
-     * Creates new form Comprar
+     * Creates new form Contas
      */
-    public Comprar() {
+    public Contas() {
         initComponents();
     }
 
@@ -32,11 +32,11 @@ public class Comprar extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 450, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 350, Short.MAX_VALUE)
         );
 
         pack();

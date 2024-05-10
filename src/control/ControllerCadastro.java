@@ -29,6 +29,7 @@ public class ControllerCadastro {
             PessoaDAO dao = new PessoaDAO(conn);
             dao.inserir(pessoa);
             JOptionPane.showMessageDialog(view, "Usuario Cadastrado!");
+             
         } catch (SQLException e){
             JOptionPane.showMessageDialog(view, "Usuario nao Cadastrado!");
         }

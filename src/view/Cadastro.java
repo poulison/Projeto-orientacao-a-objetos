@@ -215,7 +215,7 @@ public class Cadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtcadastraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtcadastraActionPerformed
-        // TODO add your handling code here:
+        controller.salvarPessoa();
     }//GEN-LAST:event_BtcadastraActionPerformed
 
     private void TxtsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtsenhaActionPerformed
@@ -233,6 +233,7 @@ public class Cadastro extends javax.swing.JFrame {
     private void rloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rloginActionPerformed
         Login l = new Login();
         l.setVisible(true);
+        Cadastro.dispose();
     }//GEN-LAST:event_rloginActionPerformed
         
     /**

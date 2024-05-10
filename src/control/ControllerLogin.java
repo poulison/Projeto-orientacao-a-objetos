@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import model.Pessoa;
+import view.Menu;
 
 public class ControllerLogin {
     private Login view;
@@ -17,7 +18,7 @@ public class ControllerLogin {
         this.view = view;
     }
     
-    public void loginInvestidor(){
+    public void LoginInvestidor(){
         Pessoa pessoa = new Pessoa(null, view.getTxtCPF().getText(), 
                                       view.getTxtsenha().getText());   
         Conexao conexao = new Conexao();
@@ -27,6 +28,8 @@ public class ControllerLogin {
             ResultSet res = dao.consultar(pessoa);
             if(res.next()){
                 JOptionPane.showMessageDialog(view, "Login feito!");
+                Menu m = new Menu();
+                m.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(view, "Login nao foi efetuado!");
             }

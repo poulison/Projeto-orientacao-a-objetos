@@ -3,12 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/programas/java/ProjetoFinal/src/model/Carteira.java</file>
+            <file>file:/C:/programas/java/ProjetoFinal/src/view/Contas.java</file>
+            <file>file:/C:/programas/java/ProjetoFinal/src/view/Atualizar.java</file>
+            <file>file:/C:/programas/java/ProjetoFinal/src/view/Comprar.java</file>
             <file>file:/C:/programas/java/ProjetoFinal/src/model/Pessoa.java</file>
+            <file>file:/C:/programas/java/ProjetoFinal/src/view/Login.java</file>
+            <file>file:/C:/programas/java/ProjetoFinal/src/view/Saldo.java</file>
+            <file>file:/C:/programas/java/ProjetoFinal/src/model/Carteira.java</file>
+            <file>file:/C:/programas/java/ProjetoFinal/src/view/Depositar.java</file>
+            <file>file:/C:/programas/java/ProjetoFinal/src/view/ConsultarExtrato.java</file>
             <file>file:/C:/programas/java/ProjetoFinal/src/DAO/PessoaDAO.java</file>
             <file>file:/C:/programas/java/ProjetoFinal/src/DAO/Conexao.java</file>
             <file>file:/C:/programas/java/ProjetoFinal/src/view/Cadastro.java</file>
-            <file>file:/C:/programas/java/ProjetoFinal/src/view/Login.java</file>
+            <file>file:/C:/programas/java/ProjetoFinal/src/view/Menu.java</file>
             <file>file:/C:/programas/java/ProjetoFinal/src/projetofinal/ProjetoFinal.java</file>
         </group>
     </open-files>
