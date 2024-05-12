@@ -8,6 +8,6 @@ package model;
  *
  * @author Paulo
  */
-public class Ripple extends Moedas{
+public class Ripple extends Moedas implements Tarifacao{
     
 }

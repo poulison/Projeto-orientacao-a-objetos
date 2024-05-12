@@ -9,8 +9,22 @@ package model;
  * @author Paulo
  */
 public class Investidor extends Pessoa {
-
-    public Investidor(String CPF, String senha) {
+    private Carteira carteira;
+    
+    public Investidor(String nome, String CPF, String senha) {
+        super(nome, CPF, senha);
+        this.carteira = carteira;
     }
+    
+    public Investidor(Carteira carteira, String nome, String CPF, String senha) {
+        super(nome, CPF, senha);
+        this.carteira = carteira;
+    }
+
+    @Override
+    public String toString() {
+        return "Investidor{" + "carteira=" + carteira + '}';
+    }
+    
     
 }

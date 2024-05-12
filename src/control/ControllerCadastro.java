@@ -1,13 +1,14 @@
 
 package control;
 
-import DAO.PessoaDAO;
+import DAO.InvestidorDAO;
 import DAO.Conexao;
 import view.Cadastro;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
-import model.Pessoa;
+import model.Investidor;
+
 
 public class ControllerCadastro {
     private Cadastro view;
@@ -21,13 +22,13 @@ public class ControllerCadastro {
         String CPF = view.getTxtCPF().getText();
         String senha = view.getTxtsenha().getText();
         
-        Pessoa pessoa = new Pessoa(nome, CPF, senha);
+        Investidor investidor = new Investidor(nome, CPF, senha);
         Conexao conexao = new Conexao();
         
         try{
             Connection conn = conexao.getConnection();
-            PessoaDAO dao = new PessoaDAO(conn);
-            dao.inserir(pessoa);
+            InvestidorDAO dao = new InvestidorDAO(conn);
+            dao.inserir(investidor);
             JOptionPane.showMessageDialog(view, "Usuario Cadastrado!");
              
         } catch (SQLException e){

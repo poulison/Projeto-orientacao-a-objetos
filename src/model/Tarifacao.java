@@ -6,8 +6,8 @@ package model;
 
 /**
  *
- * @author Paulo
+ * @author lucim
  */
-public class Bitcoin extends Moedas implements Tarifacao{
+public interface Tarifacao {
     
 }

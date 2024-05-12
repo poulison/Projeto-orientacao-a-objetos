@@ -8,6 +8,6 @@ package model;
  *
  * @author Paulo
  */
-public class Moedas extends Carteira{
+public class Moedas {
     
 }

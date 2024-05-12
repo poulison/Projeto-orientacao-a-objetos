@@ -233,7 +233,8 @@ public class Cadastro extends javax.swing.JFrame {
     private void rloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rloginActionPerformed
         Login l = new Login();
         l.setVisible(true);
-        Cadastro.dispose();
+        this.setVisible(false);
+        
     }//GEN-LAST:event_rloginActionPerformed
         
     /**

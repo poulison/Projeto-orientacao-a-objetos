@@ -118,8 +118,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btcotaActionPerformed
 
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
-    Menu m = new Menu();
-    m.setVisible(false);
+    System.exit(0);
     }//GEN-LAST:event_btsairActionPerformed
 
     /**

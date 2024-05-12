@@ -202,6 +202,7 @@ public class Login extends javax.swing.JFrame {
     private void btircadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btircadastroActionPerformed
        Cadastro cf = new Cadastro();
        cf.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_btircadastroActionPerformed
 
     /**

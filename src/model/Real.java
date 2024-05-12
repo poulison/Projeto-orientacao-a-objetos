@@ -8,6 +8,10 @@ package model;
  *
  * @author Paulo
  */
-public class Real extends Moedas {
+public class Real extends Moedas implements Tarifacao{
+
+    Real(int i, int i0) {
+        
+    }
     
 }

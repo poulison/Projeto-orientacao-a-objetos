@@ -3,34 +3,35 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
-import model.Pessoa;
+import model.Investidor;
 
-public class PessoaDAO {
+
+public class InvestidorDAO {
     private Connection conn;
 
-    public PessoaDAO(Connection conn) {
+    public InvestidorDAO(Connection conn) {
         this.conn = conn;
     }
     
-    public ResultSet consultar(Pessoa pessoa) throws SQLException{
+    public ResultSet consultar(Investidor investidor) throws SQLException{
 //        String sql = "select * from aluno where usuario = '" + 
 //                aluno.getUsuario() + "' AND senha = '" +
 //                aluno.getSenha() + "'";
         String sql = "select * from innvestidor where CPF = ? and senha = ?";
         
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setString(1, pessoa.getCPF());
-        statement.setString(2, pessoa.getSenha());
+        statement.setString(1, investidor.getCPF());
+        statement.setString(2, investidor.getSenha());
         statement.execute();
         ResultSet resultado = statement.getResultSet();
         return resultado;
     }
     
-    public void inserir(Pessoa pessoa) throws SQLException{
+    public void inserir(Investidor investidor) throws SQLException{
         String sql = "insert into Pessoa (nome, CPF, senha) values ('" +
-                pessoa.getNome() + "', '" + 
-                pessoa.getCPF() + "', '" +
-                pessoa.getSenha() + "')";
+                investidor.getNome() + "', '" + 
+                investidor.getCPF() + "', '" +
+                investidor.getSenha() + "')";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.execute();
         conn.close();
