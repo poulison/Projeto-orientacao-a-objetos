@@ -103,7 +103,7 @@ public class Cadastro extends javax.swing.JFrame {
         Btcadastra = new javax.swing.JButton();
         Lblnome = new javax.swing.JLabel();
         Txtnome = new javax.swing.JTextField();
-        Txtsenha = new javax.swing.JPasswordField();
+        Txtsenha = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         loginvolta = new javax.swing.JMenu();
         rlogin = new javax.swing.JMenuItem();
@@ -136,12 +136,6 @@ public class Cadastro extends javax.swing.JFrame {
         Txtnome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtnomeActionPerformed(evt);
-            }
-        });
-
-        Txtsenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtsenhaActionPerformed(evt);
             }
         });
 
@@ -178,9 +172,10 @@ public class Cadastro extends javax.swing.JFrame {
                                     .addComponent(LblCPF)
                                     .addComponent(Lblsenha))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Txtsenha)
-                                    .addComponent(TxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(90, 90, 90))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(191, 191, 191)
                         .addComponent(Lblcadastro))
@@ -232,10 +227,6 @@ public class Cadastro extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_rloginActionPerformed
-
-    private void TxtsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtsenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtsenhaActionPerformed
         
     /**
      * @param args the command line arguments
@@ -250,7 +241,7 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel Lblsenha;
     private javax.swing.JTextField TxtCPF;
     private javax.swing.JTextField Txtnome;
-    private javax.swing.JPasswordField Txtsenha;
+    private javax.swing.JTextField Txtsenha;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu loginvolta;

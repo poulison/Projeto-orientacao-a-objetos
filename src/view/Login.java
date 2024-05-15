@@ -94,7 +94,7 @@ public class Login extends javax.swing.JFrame {
         btlogin = new javax.swing.JButton();
         btircadastro = new javax.swing.JButton();
         txtCPF = new javax.swing.JTextField();
-        txtsenha = new javax.swing.JPasswordField();
+        txtsenha = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,9 +144,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(lblsenha)
                             .addComponent(lblCPF))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                            .addComponent(txtsenha)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(212, 212, 212)
                         .addComponent(btlogin))
@@ -156,7 +156,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addComponent(btircadastro)))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,6 +183,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btloginActionPerformed
         controller.LoginInvestidor();
+        this.setVisible(false);
     }//GEN-LAST:event_btloginActionPerformed
 
     private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
@@ -207,6 +208,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lblrlogin;
     private javax.swing.JLabel lblsenha;
     private javax.swing.JTextField txtCPF;
-    private javax.swing.JPasswordField txtsenha;
+    private javax.swing.JTextField txtsenha;
     // End of variables declaration//GEN-END:variables
 }

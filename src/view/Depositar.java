@@ -4,6 +4,11 @@
  */
 package view;
 
+import control.ControllerDeposito;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Paulo
@@ -15,8 +20,34 @@ public class Depositar extends javax.swing.JFrame {
      */
     public Depositar() {
         initComponents();
+        controller = new ControllerDeposito(this);
     }
 
+    public JButton getBtdeposito() {
+        return btdeposito;
+    }
+
+    public void setBtdeposito(JButton btdeposito) {
+        this.btdeposito = btdeposito;
+    }
+
+    public JTextField getTxtdeposito() {
+        return txtdeposito;
+    }
+
+    public void setTxtdeposito(JTextField txtdeposito) {
+        this.txtdeposito = txtdeposito;
+    }
+
+    public JTextArea getTxtnovo() {
+        return txtnovo;
+    }
+
+    public void setTxtnovo(JTextArea txtnovo) {
+        this.txtnovo = txtnovo;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,7 +69,7 @@ public class Depositar extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Depositar");
 
-        jLabel2.setText("Valor:");
+        jLabel2.setText("Insira o valor em reais:");
 
         btdeposito.setText("Depositar");
 
@@ -64,7 +95,7 @@ public class Depositar extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btdeposito)
-                                    .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -89,7 +120,7 @@ public class Depositar extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
+     private ControllerDeposito controller;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btdeposito;

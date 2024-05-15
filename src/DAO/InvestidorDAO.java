@@ -1,3 +1,5 @@
+
+
 package DAO;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -17,7 +19,7 @@ public class InvestidorDAO {
 //        String sql = "select * from aluno where usuario = '" + 
 //                aluno.getUsuario() + "' AND senha = '" +
 //                aluno.getSenha() + "'";
-        String sql = "select * from innvestidor where CPF = ? and senha = ?";
+        String sql = "select * from investidor where cpf = ? and senha = ?";
         
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, investidor.getCPF());
@@ -28,13 +30,23 @@ public class InvestidorDAO {
     }
     
     public void inserir(Investidor investidor) throws SQLException{
-        String sql = "insert into Pessoa (nome, CPF, senha) values ('" +
-                investidor.getNome() + "', '" + 
-                investidor.getCPF() + "', '" +
-                investidor.getSenha() + "')";
+        String sql = "insert into investidor (nome, cpf, senha) "
+                + "values ( ?, ?, ?)";
         PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, investidor.getNome());
+        statement.setString(2, investidor.getCPF());
+        statement.setString(3, investidor.getSenha());
         statement.execute();
         conn.close();
     }
+    
+    
+    }
+    
+    
+        
+    
+    
+    
    
-}
+

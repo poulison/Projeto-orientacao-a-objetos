@@ -38,7 +38,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="btdeposito" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtdeposito" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <Component id="txtdeposito" min="-2" pref="185" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -78,7 +78,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Valor:"/>
+        <Property name="text" type="java.lang.String" value="Insira o valor em reais:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtdeposito">

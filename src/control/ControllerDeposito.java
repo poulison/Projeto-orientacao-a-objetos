@@ -1,13 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package control;
 
-/**
- *
- * @author Paulo
- */
+import DAO.InvestidorDAO;
+import DAO.Conexao;
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+import java.sql.SQLException;
+import model.Investidor;
+import view.Depositar;
+
+
 public class ControllerDeposito {
+    private Depositar view;
+
+    public ControllerDeposito(Depositar view) {
+        this.view = view;
+    }
     
+        try{
+            Connection conn = conexao.getConnection();
+            InvestidorDAO dao = new InvestidorDAO(conn);
+            dao.inserir(investidor);
+            JOptionPane.showMessageDialog(view, "Usuario Cadastrado!");
+             
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(view, "Usuario nao Cadastrado!");
+        }
+    }
 }
