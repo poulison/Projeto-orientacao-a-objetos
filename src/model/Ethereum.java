@@ -9,5 +9,7 @@ package model;
  * @author Paulo
  */
 public class Ethereum extends Moedas implements Tarifacao{
-    
+    public Ethereum(double saldo, double cotas){
+        super(saldo, cotas);
+    }
 }

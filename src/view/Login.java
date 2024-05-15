@@ -94,7 +94,7 @@ public class Login extends javax.swing.JFrame {
         btlogin = new javax.swing.JButton();
         btircadastro = new javax.swing.JButton();
         txtCPF = new javax.swing.JTextField();
-        txtsenha = new javax.swing.JTextField();
+        txtsenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,12 +132,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        txtsenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsenhaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,8 +145,8 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(lblCPF))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtsenha, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                            .addComponent(txtCPF)))
+                            .addComponent(txtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                            .addComponent(txtsenha)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(212, 212, 212)
                         .addComponent(btlogin))
@@ -195,10 +189,6 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCPFActionPerformed
 
-    private void txtsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtsenhaActionPerformed
-
     private void btircadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btircadastroActionPerformed
        Cadastro cf = new Cadastro();
        cf.setVisible(true);
@@ -217,6 +207,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lblrlogin;
     private javax.swing.JLabel lblsenha;
     private javax.swing.JTextField txtCPF;
-    private javax.swing.JTextField txtsenha;
+    private javax.swing.JPasswordField txtsenha;
     // End of variables declaration//GEN-END:variables
 }

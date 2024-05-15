@@ -100,10 +100,10 @@ public class Cadastro extends javax.swing.JFrame {
         LblCPF = new javax.swing.JLabel();
         Lblsenha = new javax.swing.JLabel();
         TxtCPF = new javax.swing.JTextField();
-        Txtsenha = new javax.swing.JTextField();
         Btcadastra = new javax.swing.JButton();
         Lblnome = new javax.swing.JLabel();
         Txtnome = new javax.swing.JTextField();
+        Txtsenha = new javax.swing.JPasswordField();
         jMenuBar1 = new javax.swing.JMenuBar();
         loginvolta = new javax.swing.JMenu();
         rlogin = new javax.swing.JMenuItem();
@@ -124,12 +124,6 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
 
-        Txtsenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtsenhaActionPerformed(evt);
-            }
-        });
-
         Btcadastra.setText("Cadastrar");
         Btcadastra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,6 +136,12 @@ public class Cadastro extends javax.swing.JFrame {
         Txtnome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtnomeActionPerformed(evt);
+            }
+        });
+
+        Txtsenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtsenhaActionPerformed(evt);
             }
         });
 
@@ -170,17 +170,17 @@ public class Cadastro extends javax.swing.JFrame {
                         .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lblnome)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Txtnome))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(LblCPF)
                                     .addComponent(Lblsenha))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Txtsenha, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                    .addComponent(TxtCPF)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Lblnome)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Txtnome, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))))
+                                    .addComponent(Txtsenha)
+                                    .addComponent(TxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(191, 191, 191)
                         .addComponent(Lblcadastro))
@@ -206,9 +206,9 @@ public class Cadastro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lblsenha)
                     .addComponent(Txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
+                .addGap(60, 60, 60)
                 .addComponent(Btcadastra)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -217,10 +217,6 @@ public class Cadastro extends javax.swing.JFrame {
     private void BtcadastraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtcadastraActionPerformed
         controller.salvarPessoa();
     }//GEN-LAST:event_BtcadastraActionPerformed
-
-    private void TxtsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtsenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtsenhaActionPerformed
 
     private void TxtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCPFActionPerformed
         // TODO add your handling code here:
@@ -236,6 +232,10 @@ public class Cadastro extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_rloginActionPerformed
+
+    private void TxtsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtsenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtsenhaActionPerformed
         
     /**
      * @param args the command line arguments
@@ -250,7 +250,7 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel Lblsenha;
     private javax.swing.JTextField TxtCPF;
     private javax.swing.JTextField Txtnome;
-    private javax.swing.JTextField Txtsenha;
+    private javax.swing.JPasswordField Txtsenha;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu loginvolta;

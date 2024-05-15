@@ -9,7 +9,10 @@ package model;
  * @author Paulo
  */
 public class Real extends Moedas implements Tarifacao{
-
+    public Real(double saldo, double cotas){
+        super(saldo, cotas);
+    }
+    
     Real(int i, int i0) {
         
     }

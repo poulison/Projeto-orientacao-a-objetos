@@ -9,5 +9,7 @@ package model;
  * @author Paulo
  */
 public class Bitcoin extends Moedas implements Tarifacao{
-    
+    public Bitcoin(double saldo, double cotas){
+        super(saldo, cotas);
+    }
 }

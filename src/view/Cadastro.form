@@ -53,20 +53,20 @@
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
+                              <Component id="Lblnome" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="Txtnome" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="LblCPF" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="Lblsenha" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="Txtsenha" pref="240" max="32767" attributes="0"/>
-                                  <Component id="TxtCPF" max="32767" attributes="0"/>
+                                  <Component id="Txtsenha" max="32767" attributes="0"/>
+                                  <Component id="TxtCPF" min="-2" pref="240" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="Lblnome" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="Txtnome" pref="239" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -103,9 +103,9 @@
                   <Component id="Lblsenha" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Txtsenha" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               <Component id="Btcadastra" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="62" max="32767" attributes="0"/>
+              <EmptySpace pref="65" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -134,11 +134,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtCPFActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="Txtsenha">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtsenhaActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="Btcadastra">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar"/>
@@ -155,6 +150,11 @@
     <Component class="javax.swing.JTextField" name="Txtnome">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtnomeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="Txtsenha">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtsenhaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
