@@ -35,8 +35,8 @@ public class InvestidorDAO {
     
     public void inserir(Investidor investidor) throws SQLException{
         String sql = "INSERT INTO public.investidor(\n" +
-        "nome, cpf, senha, saldo_real, saldo_btc, saldo_eth, saldo_ripple)\n" +
-        "VALUES (?, ?, ?, ?, ?, ?, ?);";
+        "nome, cpf, senha, saldo_real, saldo_btc, saldo_eth, saldo_ripple)" +
+        "VALUES (?, ?, ?, 0.0, 0.0, 0.0, 0.0);";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, investidor.getNome());
         statement.setString(2, investidor.getCPF());

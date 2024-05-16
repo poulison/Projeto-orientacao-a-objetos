@@ -29,8 +29,13 @@ public class ControllerLogin {
             ResultSet res = dao.consultar(investidor);
             if(res.next()){
                 JOptionPane.showMessageDialog(view, "Login feito!");
-                Menu m = new Menu();
+                String nome = res.getString("nome");
+                String CPF = res.getString("cpf");
+                String senha = res.getString("senha");
+                Menu m = new Menu(new Investidor(nome,CPF,senha));
                 m.setVisible(true);
+                
+                
             } else {
                 JOptionPane.showMessageDialog(view, "Login nao foi efetuado!");
             }

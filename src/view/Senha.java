@@ -5,10 +5,12 @@
 package view;
 
 //import control.ControllerSenha;
+import control.ControllerLoginSaldo;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import control.ControllerSenha;
+import model.Investidor;
 
 
 /**
@@ -16,12 +18,13 @@ import control.ControllerSenha;
  * @author Paulo
  */
 public class Senha extends javax.swing.JFrame {
-private Login l;
+
+
     
-    public Senha(Login l) {
+    public Senha(Investidor investidor ) {
         initComponents();
-        controller = new ControllerSenha(this);
-        this.l = l;
+        
+        
     }
 
     public JTextField getTxtsenha() {
@@ -113,15 +116,14 @@ private Login l;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btsennhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsennhaActionPerformed
-        controller.ConsultaSenha(l);
+        
     }//GEN-LAST:event_btsennhaActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    private ControllerSenha controller;
+    private ControllerLoginSaldo controller;
    
-    //private ControllerSenha controller;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Txtsenha;
     private javax.swing.JButton btsennha;

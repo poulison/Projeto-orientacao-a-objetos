@@ -20,13 +20,15 @@ import view.Senha;
 
 public class ControllerSenha {
     private Senha view;
-
-    public ControllerSenha(Senha view) {
+    private Investidor investidor;
+    
+    public ControllerSenha(Senha view, Investidor investidor) {
         this.view = view;
+        this.investidor = investidor;
     }
     
-    public void ConsultaSenha(Login l){
-        Investidor investidor = new Investidor(null, l.getTxtCPF().getText(),
+    public void ConsultaSenha(Investidor investidor){
+        Investidor investidor = new Investidor(null, investidor.getTxtCPF().getText(),
                 view.getTxtsenha().getText());   
         Conexao conexao = new Conexao();
         try{

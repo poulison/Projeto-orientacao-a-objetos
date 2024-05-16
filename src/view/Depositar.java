@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import control.ControllerDeposito;
@@ -136,7 +132,7 @@ public class Depositar extends javax.swing.JFrame {
     }//GEN-LAST:event_btdepositoActionPerformed
 
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
-        Menu m = new Menu();
+        Menu m = new Menu(investidor);
         m.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btsairActionPerformed

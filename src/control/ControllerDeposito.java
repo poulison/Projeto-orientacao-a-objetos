@@ -16,6 +16,7 @@ public class ControllerDeposito {
     
     public ControllerDeposito(Depositar view, Investidor investidor){
         this.view = view;
+        this.investidor = investidor;
         
     }
     

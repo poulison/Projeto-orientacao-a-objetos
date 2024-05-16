@@ -5,6 +5,7 @@ package view;
 
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import model.Investidor;
 
         
     
@@ -16,7 +17,7 @@ public class Saldo extends javax.swing.JFrame {
     /**
      * Creates new form Saldo
      */
-    public Saldo() {
+    public Saldo(Investidor investidor) {
         initComponents();
         
         
@@ -121,7 +122,7 @@ public class Saldo extends javax.swing.JFrame {
     }//GEN-LAST:event_btextratoActionPerformed
 
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
-        Menu m = new Menu();
+        Menu m = new Menu(investidor);
         m.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btsairActionPerformed
