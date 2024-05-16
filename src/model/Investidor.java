@@ -20,7 +20,17 @@ public class Investidor extends Pessoa {
         super(nome, CPF, senha);
         this.carteira = carteira;
     }
+    
+    public Carteira getCarteira() {
+        return carteira;
+    }
 
+    public void setCarteira(Carteira carteira) {
+        this.carteira = carteira;
+    }
+    
+    
+    
     @Override
     public String toString() {
         return "Investidor{" + "carteira=" + carteira + '}';

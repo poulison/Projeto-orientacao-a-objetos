@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 
 /**
@@ -9,12 +6,25 @@ package model;
  * @author Paulo
  */
 public class Real extends Moedas implements Tarifacao{
+    private static final double taxaCompra = 0.0;
+    private static final double taxaVenda = 0.0;
+    
     public Real(double saldo, double cotas){
         super(saldo, cotas);
     }
     
-    Real(int i, int i0) {
+    public Real(){
         
+    }
+
+    @Override
+    public double getTaxaCompra() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public double getTaxaVenda() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

@@ -26,6 +26,7 @@ public class ControllerCadastro {
         Conexao conexao = new Conexao();
         
         try{
+           
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
             dao.inserir(investidor);

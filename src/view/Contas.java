@@ -4,12 +4,14 @@
  */
 package view;
 
+import model.Investidor;
+
 /**
  *
  * @author unifphirata
  */
 public class Contas extends javax.swing.JFrame {
-
+    private Investidor investidor;
     /**
      * Creates new form Contas
      */
@@ -63,6 +65,11 @@ public class Contas extends javax.swing.JFrame {
 
         btvender.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btvender.setText("Vender");
+        btvender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btvenderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,7 +111,9 @@ public class Contas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btdepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btdepositarActionPerformed
-        // TODO add your handling code here:
+        Depositar d = new Depositar(investidor);
+        d.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btdepositarActionPerformed
 
     private void btsacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsacarActionPerformed
@@ -114,6 +123,10 @@ public class Contas extends javax.swing.JFrame {
     private void btcomprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcomprarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btcomprarActionPerformed
+
+    private void btvenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btvenderActionPerformed
 
     /**
      * @param args the command line arguments

@@ -32,9 +32,9 @@
                           <Component id="lblCPF" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtCPF" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="txtsenha" min="-2" pref="85" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtCPF" pref="150" max="32767" attributes="0"/>
+                          <Component id="txtsenha" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">

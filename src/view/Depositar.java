@@ -5,9 +5,11 @@
 package view;
 
 import control.ControllerDeposito;
+import control.ControllerSenha;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import model.Investidor;
 
 /**
  *
@@ -15,12 +17,14 @@ import javax.swing.JTextField;
  */
 public class Depositar extends javax.swing.JFrame {
 
+    private Investidor investidor;
+    Login l = new Login();
     /**
      * Creates new form Depositar
      */
-    public Depositar() {
+    public Depositar(Investidor investidor) {
         initComponents();
-        controller = new ControllerDeposito(this);
+        controller = new ControllerDeposito(this, investidor);
     }
 
     public JButton getBtdeposito() {
@@ -39,13 +43,7 @@ public class Depositar extends javax.swing.JFrame {
         this.txtdeposito = txtdeposito;
     }
 
-    public JTextArea getTxtnovo() {
-        return txtnovo;
-    }
-
-    public void setTxtnovo(JTextArea txtnovo) {
-        this.txtnovo = txtnovo;
-    }
+   
     
     
     /**
@@ -61,8 +59,7 @@ public class Depositar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtdeposito = new javax.swing.JTextField();
         btdeposito = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtnovo = new javax.swing.JTextArea();
+        btsair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,11 +68,25 @@ public class Depositar extends javax.swing.JFrame {
 
         jLabel2.setText("Insira o valor em reais:");
 
-        btdeposito.setText("Depositar");
+        txtdeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdepositoActionPerformed(evt);
+            }
+        });
 
-        txtnovo.setColumns(20);
-        txtnovo.setRows(5);
-        jScrollPane1.setViewportView(txtnovo);
+        btdeposito.setText("Depositar");
+        btdeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btdepositoActionPerformed(evt);
+            }
+        });
+
+        btsair.setText("voltar");
+        btsair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btsairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,15 +99,13 @@ public class Depositar extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(48, 48, 48)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btdeposito)
-                                    .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(52, Short.MAX_VALUE))
+                            .addComponent(btdeposito)
+                            .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btsair, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,25 +118,40 @@ public class Depositar extends javax.swing.JFrame {
                     .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btdeposito)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btsair)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtdepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdepositoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdepositoActionPerformed
+
+    private void btdepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btdepositoActionPerformed
+    controller.depositos();
+    controle.ConsultaSenha(l);
+    }//GEN-LAST:event_btdepositoActionPerformed
+
+    private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
+        Menu m = new Menu();
+        m.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btsairActionPerformed
+
     /**
      * @param args the command line arguments
      */
      private ControllerDeposito controller;
+     private ControllerSenha controle;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btdeposito;
+    private javax.swing.JButton btsair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtdeposito;
-    private javax.swing.JTextArea txtnovo;
     // End of variables declaration//GEN-END:variables
 }

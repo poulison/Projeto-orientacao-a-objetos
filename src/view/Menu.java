@@ -4,12 +4,15 @@
  */
 package view;
 
+
+
 /**
  *
  * @author Paulo
  */
 public class Menu extends javax.swing.JFrame {
-
+    private Login l;
+    
     /**
      * Creates new form Menu
      */
@@ -103,18 +106,21 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsaldoActionPerformed
-    Saldo s = new Saldo();
+    Senha s = new Senha(l);
     s.setVisible(true);
+    this.setVisible(false);
     }//GEN-LAST:event_btsaldoActionPerformed
 
     private void btopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btopActionPerformed
     Contas c = new Contas();
     c.setVisible(true);
+    this.setVisible(false);
     }//GEN-LAST:event_btopActionPerformed
 
     private void btcotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcotaActionPerformed
     Atualizar a = new Atualizar();
     a.setVisible(true);
+    this.setVisible(false);
     }//GEN-LAST:event_btcotaActionPerformed
 
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
@@ -124,7 +130,7 @@ public class Menu extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btcota;
     private javax.swing.JButton btop;

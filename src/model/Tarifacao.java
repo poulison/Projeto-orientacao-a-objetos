@@ -9,5 +9,6 @@ package model;
  * @author lucim
  */
 public interface Tarifacao {
-    
+    double getTaxaCompra();
+    double getTaxaVenda();
 }
