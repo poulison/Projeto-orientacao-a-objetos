@@ -9,7 +9,6 @@ import control.ControllerLoginSaldo;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import control.ControllerSenha;
 import model.Investidor;
 
 

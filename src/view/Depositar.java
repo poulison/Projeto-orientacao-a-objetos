@@ -1,9 +1,7 @@
 package view;
 
 import control.ControllerDeposito;
-import control.ControllerSenha;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import model.Investidor;
 
@@ -128,7 +126,7 @@ public class Depositar extends javax.swing.JFrame {
 
     private void btdepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btdepositoActionPerformed
     controller.depositos();
-    controle.ConsultaSenha(l);
+    //controle.ConsultaSenha();
     }//GEN-LAST:event_btdepositoActionPerformed
 
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
@@ -141,7 +139,7 @@ public class Depositar extends javax.swing.JFrame {
      * @param args the command line arguments
      */
      private ControllerDeposito controller;
-     private ControllerSenha controle;
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btdeposito;
