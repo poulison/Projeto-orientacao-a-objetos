@@ -1,6 +1,7 @@
 
 package control;
 
+
 import model.Investidor;
 import view.Menu;
 
@@ -16,4 +17,5 @@ public class ControllerMenu {
         this.view = view;
         this.investidor = investidor;
     }
+    
 }

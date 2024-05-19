@@ -29,6 +29,7 @@ public class Menu extends javax.swing.JFrame {
         txtcpf.setText(investidor.getCPF());
         txtsenha.setText(investidor.getSenha());
         controller = new ControllerMenu(this, investidor);
+        this.investidor = investidor;
     }
 
     public Investidor getInvestidor() {
@@ -247,7 +248,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btsaldoActionPerformed
 
     private void btopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btopActionPerformed
-    Contas c = new Contas();
+    Contas c = new Contas(investidor);
     c.setVisible(true);
     
     }//GEN-LAST:event_btopActionPerformed

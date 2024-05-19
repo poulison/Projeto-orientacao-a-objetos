@@ -11,13 +11,13 @@ package model;
 public class Investidor extends Pessoa {
     private Carteira carteira;
     
-    public Investidor(String nome, String CPF, String senha) {
+    public Investidor(Carteira carteira, String nome, String CPF, String senha) {
         super(nome, CPF, senha);
         this.carteira = carteira;
     }
     
-    public Investidor(Carteira carteira, String nome, String CPF, String senha) {
-        super(nome, CPF, senha);
+    public Investidor(String nome, String CPF, String senha) {
+        this(null, nome, CPF, senha);
         this.carteira = new Carteira();
     }
     

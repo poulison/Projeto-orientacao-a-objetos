@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Carteira {
     ArrayList<Moedas> moedas = new ArrayList<Moedas>();
-   
+    
     public Carteira(){
         moedas = new ArrayList<Moedas>();
         moedas.add(new Real(0,0));

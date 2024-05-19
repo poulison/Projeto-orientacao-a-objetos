@@ -12,13 +12,30 @@ import view.Depositar;
 
 public class ControllerDeposito {
     private Depositar view;
-    private  Investidor investidor;
+    private Investidor investidor;
     
     public ControllerDeposito(Depositar view, Investidor investidor){
         this.view = view;
         this.investidor = investidor;
         
     }
+
+    public Depositar getView() {
+        return view;
+    }
+
+    public void setView(Depositar view) {
+        this.view = view;
+    }
+
+    public Investidor getInvestidor() {
+        return investidor;
+    }
+
+    public void setInvestidor(Investidor investidor) {
+        this.investidor = investidor;
+    }
+    
     
     public void depositos(){
         String quantiaStr = view.getTxtdeposito().getText();

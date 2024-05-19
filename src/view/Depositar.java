@@ -2,6 +2,7 @@ package view;
 
 import control.ControllerDeposito;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import model.Investidor;
 
@@ -10,18 +11,25 @@ import model.Investidor;
  * @author Paulo
  */
 public class Depositar extends javax.swing.JFrame {
-
-    private Investidor investidor;
     
-    /**
-     * Creates new form Depositar
-     * @param investidor
-     */
+    
     public Depositar(Investidor investidor) {
         initComponents();
+        lblcpf.setText(investidor.getCPF());
         controller = new ControllerDeposito(this, investidor);
+        this.investidor = investidor;
+        
     }
 
+    public JLabel getLblcpf() {
+        return lblcpf;
+    }
+
+    public void setLblcpf(JLabel lblcpf) {
+        this.lblcpf = lblcpf;
+    }
+    
+    
     public JButton getBtdeposito() {
         return btdeposito;
     }
@@ -55,6 +63,8 @@ public class Depositar extends javax.swing.JFrame {
         txtdeposito = new javax.swing.JTextField();
         btdeposito = new javax.swing.JButton();
         btsair = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        lblcpf = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +93,8 @@ public class Depositar extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("CPF:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,12 +106,20 @@ public class Depositar extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(48, 48, 48)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btdeposito)
-                            .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btsair, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblcpf))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btdeposito)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btsair, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,15 +127,19 @@ public class Depositar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jLabel1)
-                .addGap(48, 48, 48)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lblcpf))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btdeposito)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btsair)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btdeposito)
+                    .addComponent(btsair))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
 
         pack();
@@ -127,7 +151,7 @@ public class Depositar extends javax.swing.JFrame {
 
     private void btdepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btdepositoActionPerformed
     controller.depositos();
-    //controle.ConsultaSenha();
+    
     }//GEN-LAST:event_btdepositoActionPerformed
 
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
@@ -139,13 +163,15 @@ public class Depositar extends javax.swing.JFrame {
      * @param args the command line arguments
      */
      private ControllerDeposito controller;
-  
+     private Investidor investidor;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btdeposito;
     private javax.swing.JButton btsair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblcpf;
     private javax.swing.JTextField txtdeposito;
     // End of variables declaration//GEN-END:variables
 }

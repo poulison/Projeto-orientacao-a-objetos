@@ -63,10 +63,12 @@ public class InvestidorDAO {
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setDouble(1, investidor.getCarteira().getMoedas().get(0).getSaldo());
         statement.setString(2,investidor.getCPF());
-        statement.execute();
+        statement.executeUpdate();
+        statement.close();
         
     }
-
+    
+    
 }
     
     
