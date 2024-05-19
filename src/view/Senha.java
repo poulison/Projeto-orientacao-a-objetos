@@ -4,7 +4,7 @@
  */
 package view;
 
-//import control.ControllerSenha;
+
 import control.ControllerLoginSaldo;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -17,15 +17,30 @@ import model.Investidor;
  * @author Paulo
  */
 public class Senha extends javax.swing.JFrame {
-
-
-    
-    public Senha(Investidor investidor ) {
+    private Menu M;
+    public Senha(Menu M) {
         initComponents();
-        
+        controller = new ControllerLoginSaldo(this, investidor, M); 
+        this.M = M;
         
     }
+    
+    
+    public Investidor getInvestidor() {
+        return investidor;
+    }
 
+    public void setInvestidor(Investidor investidor) {
+        this.investidor = investidor;
+    }
+    public JLabel getLblcpf() {
+        return lblcpf;
+    }
+
+    public void setLblcpf(JLabel lblcpf) {
+        this.lblcpf = lblcpf;
+    }
+     
     public JTextField getTxtsenha() {
         return Txtsenha;
     }
@@ -63,11 +78,13 @@ public class Senha extends javax.swing.JFrame {
         lblsenha = new javax.swing.JLabel();
         Txtsenha = new javax.swing.JTextField();
         btsennha = new javax.swing.JButton();
+        lblcpf = new javax.swing.JLabel();
+        lblnome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Confirmação");
+        jLabel1.setText("Confirmação de identidade");
 
         lblsenha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblsenha.setText("Senha:");
@@ -86,47 +103,62 @@ public class Senha extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
+                        .addGap(85, 85, 85)
+                        .addComponent(lblcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addGap(101, 101, 101)
+                        .addComponent(btsennha))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(lblnome))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
                         .addComponent(lblsenha)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btsennha)
-                            .addComponent(Txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                        .addComponent(Txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel1)
-                .addGap(39, 39, 39)
+                .addGap(12, 12, 12)
+                .addComponent(lblcpf)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblnome)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblsenha)
                     .addComponent(Txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(51, 51, 51)
                 .addComponent(btsennha)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btsennhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsennhaActionPerformed
-        
+    controller.checar();
+    this.setVisible(false);
     }//GEN-LAST:event_btsennhaActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    private Investidor investidor; 
     private ControllerLoginSaldo controller;
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Txtsenha;
     private javax.swing.JButton btsennha;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblcpf;
+    private javax.swing.JLabel lblnome;
     private javax.swing.JLabel lblsenha;
     // End of variables declaration//GEN-END:variables
 

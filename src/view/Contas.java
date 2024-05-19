@@ -141,8 +141,7 @@ public class Contas extends javax.swing.JFrame {
     }//GEN-LAST:event_btvenderActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
-    Menu m = new Menu(investidor);
-    m.setVisible(true);
+    
     this.setVisible(false);
     }//GEN-LAST:event_btvoltarActionPerformed
 

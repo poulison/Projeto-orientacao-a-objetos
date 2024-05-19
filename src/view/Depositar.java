@@ -12,9 +12,10 @@ import model.Investidor;
 public class Depositar extends javax.swing.JFrame {
 
     private Investidor investidor;
-    Login l = new Login();
+    
     /**
      * Creates new form Depositar
+     * @param investidor
      */
     public Depositar(Investidor investidor) {
         initComponents();
@@ -130,8 +131,7 @@ public class Depositar extends javax.swing.JFrame {
     }//GEN-LAST:event_btdepositoActionPerformed
 
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
-        Menu m = new Menu(investidor);
-        m.setVisible(true);
+
         this.setVisible(false);
     }//GEN-LAST:event_btsairActionPerformed
 

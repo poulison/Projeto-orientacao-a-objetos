@@ -4,9 +4,10 @@
  */
 package view;
 
-import control.ControllerLoginSaldo;
+
+import control.ControllerMenu;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JTextField;
 import model.Investidor;
 
 
@@ -17,17 +18,17 @@ import model.Investidor;
  */
 public class Menu extends javax.swing.JFrame {
     
-    
     /**
      * Creates new form Menu
+     * @param investidor
      */
+    
     public Menu(Investidor investidor) {
-        
         initComponents();
-        lblNome.setText(investidor.getNome());
-        lblCPF.setText(investidor.getCPF());
-        lblSenha.setText(investidor.getSenha());
-        controller = new ControllerLoginSaldo(this, investidor);
+        txtnome.setText(investidor.getNome());
+        txtcpf.setText(investidor.getCPF());
+        txtsenha.setText(investidor.getSenha());
+        controller = new ControllerMenu(this, investidor);
     }
 
     public Investidor getInvestidor() {
@@ -36,14 +37,6 @@ public class Menu extends javax.swing.JFrame {
 
     public void setInvestidor(Investidor investidor) {
         this.investidor = investidor;
-    }
-
-    public ControllerLoginSaldo getController() {
-        return controller;
-    }
-
-    public void setController(ControllerLoginSaldo controller) {
-        this.controller = controller;
     }
 
     public JButton getBtcota() {
@@ -78,69 +71,31 @@ public class Menu extends javax.swing.JFrame {
         this.btsaldo = btsaldo;
     }
 
-    public JLabel getjLabel1() {
-        return jLabel1;
+    public JTextField getTxtcpf() {
+        return txtcpf;
     }
 
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
+    public void setTxtcpf(JTextField txtcpf) {
+        this.txtcpf = txtcpf;
     }
 
-    public JLabel getjLabel2() {
-        return jLabel2;
+    public JTextField getTxtnome() {
+        return txtnome;
     }
 
-    public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
+    public void setTxtnome(JTextField txtnome) {
+        this.txtnome = txtnome;
     }
 
-    public JLabel getjLabel3() {
-        return jLabel3;
+    public JTextField getTxtsenha() {
+        return txtsenha;
     }
 
-    public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
+    public void setTxtsenha(JTextField txtsenha) {
+        this.txtsenha = txtsenha;
     }
 
-    public JLabel getjLabel4() {
-        return jLabel4;
-    }
-
-    public void setjLabel4(JLabel jLabel4) {
-        this.jLabel4 = jLabel4;
-    }
-
-    public JLabel getjLabel5() {
-        return jLabel5;
-    }
-
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
-    }
-
-    public JLabel getLblCPF() {
-        return lblCPF;
-    }
-
-    public void setLblCPF(JLabel lblCPF) {
-        this.lblCPF = lblCPF;
-    }
-
-    public JLabel getLblNome() {
-        return lblNome;
-    }
-
-    public void setLblNome(JLabel lblNome) {
-        this.lblNome = lblNome;
-    }
-
-    public JLabel getLblSenha() {
-        return lblSenha;
-    }
-
-    public void setLblSenha(JLabel lblSenha) {
-        this.lblSenha = lblSenha;
-    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -160,9 +115,9 @@ public class Menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        lblNome = new javax.swing.JLabel();
-        lblCPF = new javax.swing.JLabel();
-        lblSenha = new javax.swing.JLabel();
+        txtcpf = new javax.swing.JTextField();
+        txtsenha = new javax.swing.JTextField();
+        txtnome = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -206,6 +161,18 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel5.setText("Dados investidor -->");
 
+        txtcpf.setEditable(false);
+        txtcpf.setBackground(new java.awt.Color(242, 242, 242));
+        txtcpf.setBorder(null);
+
+        txtsenha.setEditable(false);
+        txtsenha.setBackground(new java.awt.Color(242, 242, 242));
+        txtsenha.setBorder(null);
+
+        txtnome.setEditable(false);
+        txtnome.setBackground(new java.awt.Color(242, 242, 242));
+        txtnome.setBorder(null);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -214,87 +181,81 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 128, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btsair, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btop, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btcota, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblSenha))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addGap(81, 81, 81))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblNome))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblCPF)))
-                            .addGap(117, 117, 117)))))
+                                    .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel1))
+                            .addComponent(jLabel5))
+                        .addGap(0, 97, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btop, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btcota, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btsair, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btop, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addComponent(btcota, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(lblNome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(lblCPF))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(lblSenha))
-                .addGap(61, 61, 61)
+                .addGap(85, 85, 85)
                 .addComponent(btsair, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsaldoActionPerformed
-    Senha s = new Senha(investidor);
+    
+    Senha s = new Senha(this);
     s.setVisible(true);
-    this.setVisible(false);
+    
     }//GEN-LAST:event_btsaldoActionPerformed
 
     private void btopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btopActionPerformed
     Contas c = new Contas();
     c.setVisible(true);
-    this.setVisible(false);
+    
     }//GEN-LAST:event_btopActionPerformed
 
     private void btcotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcotaActionPerformed
     Atualizar a = new Atualizar();
     a.setVisible(true);
-    this.setVisible(false);
+    
     }//GEN-LAST:event_btcotaActionPerformed
 
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
@@ -305,7 +266,7 @@ public class Menu extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     private Investidor investidor; 
-    private ControllerLoginSaldo controller;
+    private ControllerMenu controller;
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -318,16 +279,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel lblCPF;
-    private javax.swing.JLabel lblNome;
-    private javax.swing.JLabel lblSenha;
+    private javax.swing.JTextField txtcpf;
+    private javax.swing.JTextField txtnome;
+    private javax.swing.JTextField txtsenha;
     // End of variables declaration//GEN-END:variables
 
-    public Object getLblCPF() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Object getLblsenha() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }

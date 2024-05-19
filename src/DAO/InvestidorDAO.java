@@ -21,14 +21,15 @@ public class InvestidorDAO {
     
     
     public ResultSet consultar(Investidor investidor) throws SQLException{
-
-        String sql = "select * from investidor where cpf = ? and senha = ?";
         
+        String sql = "select * from investidor where cpf = ? and senha = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, investidor.getCPF());
         statement.setString(2, investidor.getSenha());
         statement.execute();
+        System.out.println(statement);
         ResultSet resultado = statement.getResultSet();
+        System.out.println(resultado);
         return resultado;
         
     }

@@ -3,8 +3,9 @@ package view;
 
 
 
+import control.ControllerSaldo;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
+import javax.swing.JLabel;
 import model.Investidor;
 
         
@@ -16,20 +17,78 @@ import model.Investidor;
 public class Saldo extends javax.swing.JFrame {
     /**
      * Creates new form Saldo
+     * @param investidor
      */
-    public Saldo() {
+    public Saldo(Investidor investidor) {
         initComponents();
-        
+        lblnome.setText(investidor.getNome());
+        lblCPF.setText(investidor.getCPF());
+        lblreal.setText(String.valueOf(investidor.getCarteira().getMoedas().get(0).getSaldo()));
+        lblbitcoin.setText(String.valueOf(investidor.getCarteira().getMoedas().get(1).getSaldo()));
+        lblethereum.setText(String.valueOf(investidor.getCarteira().getMoedas().get(2).getSaldo()));
+        lblripple.setText(String.valueOf(investidor.getCarteira().getMoedas().get(3).getSaldo()));
+        controller = new ControllerSaldo(this);
         
     }
     
-    public JTextArea getAreasaldo() {
-        return areasaldo;
+    
+    public JButton getBtsair() {
+        return btsair;
     }
 
-    public void setAreasaldo(JTextArea areasaldo) {
-        this.areasaldo = areasaldo;
+    public void setBtsair(JButton btsair) {
+        this.btsair = btsair;
     }
+
+    public JLabel getLblCPF() {
+        return lblCPF;
+    }
+
+    public void setLblCPF(JLabel lblCPF) {
+        this.lblCPF = lblCPF;
+    }
+
+    public JLabel getLblbitcoin() {
+        return lblbitcoin;
+    }
+
+    public void setLblbitcoin(JLabel lblbitcoin) {
+        this.lblbitcoin = lblbitcoin;
+    }
+
+    public JLabel getLblethereum() {
+        return lblethereum;
+    }
+
+    public void setLblethereum(JLabel lblethereum) {
+        this.lblethereum = lblethereum;
+    }
+
+    public JLabel getLblnome() {
+        return lblnome;
+    }
+
+    public void setLblnome(JLabel lblnome) {
+        this.lblnome = lblnome;
+    }
+
+    public JLabel getLblreal() {
+        return lblreal;
+    }
+
+    public void setLblreal(JLabel lblreal) {
+        this.lblreal = lblreal;
+    }
+
+    public JLabel getLblripple() {
+        return lblripple;
+    }
+
+    public void setLblripple(JLabel lblripple) {
+        this.lblripple = lblripple;
+    }
+    
+    
 
     public JButton getBtextrato() {
         return btextrato;
@@ -101,8 +160,6 @@ public class Saldo extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Ripple:");
-
-        lblnome.setText("jLabel8");
 
         lblreal.setToolTipText("");
 
@@ -202,11 +259,12 @@ public class Saldo extends javax.swing.JFrame {
     }//GEN-LAST:event_btextratoActionPerformed
 
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
-        //Menu m = new Menu();
-        //m.setVisible(true);
-        this.setVisible(false);
+
+       this.setVisible(false);
     }//GEN-LAST:event_btsairActionPerformed
     
+    private Investidor investidor;
+    private ControllerSaldo controller;
     /**
      * @param args the command line arguments
      */
