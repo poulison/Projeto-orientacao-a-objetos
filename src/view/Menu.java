@@ -40,14 +40,6 @@ public class Menu extends javax.swing.JFrame {
         this.investidor = investidor;
     }
 
-    public JButton getBtcota() {
-        return btcota;
-    }
-
-    public void setBtcota(JButton btcota) {
-        this.btcota = btcota;
-    }
-
     public JButton getBtop() {
         return btop;
     }
@@ -111,7 +103,6 @@ public class Menu extends javax.swing.JFrame {
         btsaldo = new javax.swing.JButton();
         btsair = new javax.swing.JButton();
         btop = new javax.swing.JButton();
-        btcota = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -147,13 +138,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btcota.setText("Cotação");
-        btcota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btcotaActionPerformed(evt);
-            }
-        });
-
         jLabel2.setText("Nome:");
 
         jLabel3.setText("CPF:");
@@ -163,15 +147,12 @@ public class Menu extends javax.swing.JFrame {
         jLabel5.setText("Dados investidor -->");
 
         txtcpf.setEditable(false);
-        txtcpf.setBackground(new java.awt.Color(242, 242, 242));
         txtcpf.setBorder(null);
 
         txtsenha.setEditable(false);
-        txtsenha.setBackground(new java.awt.Color(242, 242, 242));
         txtsenha.setBorder(null);
 
         txtnome.setEditable(false);
-        txtnome.setBackground(new java.awt.Color(242, 242, 242));
         txtnome.setBorder(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,7 +180,6 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btop, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btcota, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btsair, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
@@ -218,10 +198,10 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -230,11 +210,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(btsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btop, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(btcota, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
+                .addGap(66, 66, 66)
                 .addComponent(btsair, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -253,12 +231,6 @@ public class Menu extends javax.swing.JFrame {
     
     }//GEN-LAST:event_btopActionPerformed
 
-    private void btcotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcotaActionPerformed
-    Atualizar a = new Atualizar();
-    a.setVisible(true);
-    
-    }//GEN-LAST:event_btcotaActionPerformed
-
     private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
     System.exit(0);
     }//GEN-LAST:event_btsairActionPerformed
@@ -271,7 +243,6 @@ public class Menu extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btcota;
     private javax.swing.JButton btop;
     private javax.swing.JButton btsair;
     private javax.swing.JButton btsaldo;

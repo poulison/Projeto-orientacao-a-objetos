@@ -16,6 +16,7 @@
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/model/Moedas.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/view/Comprar.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/view/Menu.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/control/ControllerSacar.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/model/Bitcoin.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/control/ControllerMenu.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/control/ControllerCadastro.java</file>
@@ -23,7 +24,9 @@
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/view/Cadastro.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/view/Login.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/control/ControllerContas.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/model/Real.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/model/Investidor.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/DAO/CotaDAO.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/model/Ethereum.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/DAO/InvestidorDAO.java</file>
             <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/src/view/ConsultarExtrato.java</file>

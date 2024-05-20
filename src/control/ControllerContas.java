@@ -19,4 +19,6 @@ public class ControllerContas {
         this.view = view;
         this.investidor = investidor;
     }
+    
+    
 }

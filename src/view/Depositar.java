@@ -139,7 +139,7 @@ public class Depositar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btdeposito)
                     .addComponent(btsair))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();

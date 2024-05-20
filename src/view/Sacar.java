@@ -4,19 +4,71 @@
  */
 package view;
 
+
+import control.ControllerSacar;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import model.Investidor;
+import control.ControllerSacar;
+
 /**
  *
  * @author Paulo
  */
 public class Sacar extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Sacar
+     * @param investidor
      */
-    public Sacar() {
+    public Sacar(Investidor investidor) {
         initComponents();
+        lblcpf.setText(investidor.getCPF());
+        controller = new ControllerSacar(this, investidor);
+        this.investidor = investidor;
     }
 
+    public ControllerSacar getController() {
+        return controller;
+    }
+
+    public void setController(ControllerSacar controller) {
+        this.controller = controller;
+    }
+
+    public Investidor getInvestidor() {
+        return investidor;
+    }
+
+    public void setInvestidor(Investidor investidor) {
+        this.investidor = investidor;
+    }
+
+    public JButton getBtsaque() {
+        return btsaque;
+    }
+
+    public void setBtsaque(JButton btsaque) {
+        this.btsaque = btsaque;
+    }
+
+    public JLabel getLblcpf() {
+        return lblcpf;
+    }
+
+    public void setLblcpf(JLabel lblcpf) {
+        this.lblcpf = lblcpf;
+    }
+
+    public JTextField getTxtsaque() {
+        return txtsaque;
+    }
+
+    public void setTxtsaque(JTextField txtsaque) {
+        this.txtsaque = txtsaque;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,8 +80,11 @@ public class Sacar extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btsaque = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        lblcpf = new javax.swing.JLabel();
+        txtsaque = new javax.swing.JTextField();
+        btvoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,16 +93,19 @@ public class Sacar extends javax.swing.JFrame {
 
         jLabel2.setText("Valor:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        btsaque.setText("Sacar");
+        btsaque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                btsaqueActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Sacar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setText("CPF:");
+
+        btvoltar.setText("Voltar");
+        btvoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btvoltarActionPerformed(evt);
             }
         });
 
@@ -61,49 +119,69 @@ public class Sacar extends javax.swing.JFrame {
                         .addGap(156, 156, 156)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(107, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblcpf))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btsaque)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btvoltar))
+                                    .addComponent(txtsaque, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lblcpf))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(jButton1)
-                .addContainerGap(122, Short.MAX_VALUE))
+                    .addComponent(txtsaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btsaque)
+                    .addComponent(btvoltar))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void btsaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsaqueActionPerformed
+        controller.saque();
+    }//GEN-LAST:event_btsaqueActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btvoltarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     
-
+    private ControllerSacar controller;
+    private Investidor investidor;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btsaque;
+    private javax.swing.JButton btvoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblcpf;
+    private javax.swing.JTextField txtsaque;
     // End of variables declaration//GEN-END:variables
+
+   
 }
