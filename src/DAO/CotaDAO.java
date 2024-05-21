@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
+import java.util.Random;
+import model.Investidor;
 import model.Moedas;
 /**
  *
@@ -23,20 +25,29 @@ public class CotaDAO {
         this.conn = conn;
     }
 
-    public ResultSet consultar() {
-    try {
-        String sql = "SELECT * FROM moedas WHERE id = (SELECT MAX(id) FROM moedas)";
+
+    public void atualizar(Investidor investidor) throws SQLException{
+        String sql = "update moedas set bitcoin = ?, ethereum = ?, ripple = ?";
+        double cotacaoBit = investidor.getCarteira().getMoedas().get(1).getCotas();
+        double cotacaoEth = investidor.getCarteira().getMoedas().get(2).getCotas();
+        double cotacaoRip = investidor.getCarteira().getMoedas().get(3).getCotas();
         PreparedStatement statement = conn.prepareStatement(sql);
-        ResultSet resultado = statement.executeQuery();
-        return resultado;
-    } catch (SQLException e) {
-        return null; 
+        Random random = new Random();
+        double variacaoBit = random.nextDouble() * 0.1 - 0.05; // Variação de ±5%
+        double variacaoEth = random.nextDouble() * 0.1 - 0.05; // Variação de ±5%
+        double variacaoRip = random.nextDouble() * 0.1 - 0.05; // Variação de ±5%
+        
+        double cotacaoBitAtualizada = cotacaoBit * (1 + variacaoBit);
+        double cotacaoEthAtualizada = cotacaoEth * (1 + variacaoEth);
+        double cotacaoRipAtualizada = cotacaoRip * (1 + variacaoRip);
+        
+        statement.setDouble(1, cotacaoBitAtualizada);
+        statement.setDouble(2, cotacaoEthAtualizada);
+        statement.setDouble(3, cotacaoRipAtualizada);
+        statement.execute();
+        conn.close();
     }
 
-
-
-
-    }
 }
 
 

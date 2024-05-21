@@ -4,6 +4,12 @@
  */
 package control;
 
+import DAO.Conexao;
+import DAO.CotaDAO;
+import DAO.InvestidorDAO;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import model.Investidor;
 import view.Contas;
 
@@ -18,6 +24,18 @@ public class ControllerContas {
     public ControllerContas(Contas view, Investidor investidor){
         this.view = view;
         this.investidor = investidor;
+    }
+    public void atualizar(Investidor investidor){
+        Conexao conexao = new Conexao();
+        
+        try{
+            Connection conn = conexao.getConnection();
+            CotaDAO dao = new CotaDAO(conn);
+            dao.atualizar(investidor);
+            JOptionPane.showMessageDialog(view, "Atualizadas!");
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(view, "Erro!");
+        }
     }
     
     

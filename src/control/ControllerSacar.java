@@ -56,7 +56,7 @@ public class ControllerSacar {
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
             dao.atualizar(investidor);
-            JOptionPane.showMessageDialog(view, "Deposito feito!");
+            JOptionPane.showMessageDialog(view, "Saque feito!");
        }catch (SQLException e){
             JOptionPane.showMessageDialog(view, "Erro de conexao!");
         }

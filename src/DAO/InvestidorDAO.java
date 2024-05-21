@@ -33,14 +33,22 @@ public class InvestidorDAO {
     }
     
     public void inserir(Investidor investidor) throws SQLException{
-        String sql = "INSERT INTO public.investidor(\n" +
+        String sql = "INSERT INTO investidor(\n" +
         "nome, cpf, senha, saldo_real, saldo_btc, saldo_eth, saldo_ripple)" +
         "VALUES (?, ?, ?, 0.0, 0.0, 0.0, 0.0);";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, investidor.getNome());
         statement.setString(2, investidor.getCPF());
         statement.setString(3, investidor.getSenha());
+        String sql1 = "INSERT INTO moedas(\n"+
+        "id, bitcoin, ethereum, riple)"+
+        "VALUES(1, ?, ?, ?);";
+        PreparedStatement statement1 = conn.prepareStatement(sql1);
+        statement1.setDouble(1, investidor.getCarteira().getMoedas().get(1).getCotas());
+        statement1.setDouble(2, investidor.getCarteira().getMoedas().get(2).getCotas());
+        statement1.setDouble(3, investidor.getCarteira().getMoedas().get(3).getCotas());
         statement.execute();
+        statement1.execute();
         conn.close();
     }
     

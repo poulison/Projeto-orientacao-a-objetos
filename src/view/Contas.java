@@ -167,6 +167,11 @@ public class Contas extends javax.swing.JFrame {
         jLabel3.setText("CPF");
 
         atmoeda.setText("Atualizar moedas");
+        atmoeda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atmoedaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -262,6 +267,10 @@ public class Contas extends javax.swing.JFrame {
     
     this.setVisible(false);
     }//GEN-LAST:event_btvoltarActionPerformed
+
+    private void atmoedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atmoedaActionPerformed
+        controller.atualizar(investidor);
+    }//GEN-LAST:event_atmoedaActionPerformed
 
     /**
      * @param args the command line arguments
