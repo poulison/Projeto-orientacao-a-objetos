@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package control;
 
 import DAO.Conexao;
@@ -42,91 +38,92 @@ public class ControllerCompras {
     }
     
     
-    public void comprarBit(Investidor investidor){
+    public void comprarBit(){
         String valorE = view.getTxtbit().getText();
         double valor = Double.parseDouble(valorE);
         double saldoR = investidor.getCarteira().getMoedas().get(0).getSaldo();
         double cotacaoBit = investidor.getCarteira().getMoedas().get(1).getCotas();
         double saldoB = investidor.getCarteira().getMoedas().get(1).getSaldo();
         double taxaCompraB = 0.02;
-        double compra = (saldoR - valor) * taxaCompraB;
+        double reais = saldoR - valor;
+        double compra = reais * cotacaoBit;
             if (compra < 0){
                 JOptionPane.showMessageDialog(view, "Saldo insuficiente!");
-        }
-            else{
-                Conexao conexao = new Conexao();
-                    try{
-                        Connection conn = conexao.getConnection();
-                        double Diff = cotacaoBit * compra;
-                        double novoSaldoB = saldoB - Diff;
-                        InvestidorDAO dao = new InvestidorDAO(conn);
-                        dao.atualizar(investidor);
-                        dao.atualizarB(investidor);
-                        investidor.getCarteira().getMoedas().get(0).setSaldo(compra);
-                        investidor.getCarteira().getMoedas().get(1).setSaldo(novoSaldoB);
-                        JOptionPane.showMessageDialog(view, "Compra realizada!");
-                    }catch (SQLException e){
-                        JOptionPane.showMessageDialog(view, "Erro de conexao!");
+                return;
+            }
+            double Diff = taxaCompraB * compra;
+            double novoSaldoB = saldoB + Diff;
+            investidor.getCarteira().getMoedas().get(0).setSaldo(reais);
+            investidor.getCarteira().getMoedas().get(1).setSaldo(novoSaldoB);
+            Conexao conexao = new Conexao();
+                try{
+                    Connection conn = conexao.getConnection();
+                    InvestidorDAO dao = new InvestidorDAO(conn);
+                    dao.atualizar(investidor);
+                    dao.atualizarB(investidor);
+                    JOptionPane.showMessageDialog(view, "Compra realizada!");
+                }catch (SQLException e){
+                    JOptionPane.showMessageDialog(view, "Erro de conexao!");
             }
         }
-    }
     
     
-    public void comprarEth(Investidor investidor){
+    
+    public void comprarEth(){
         String valorE2 = view.getTxteth().getText();
         double valore = Double.parseDouble(valorE2);
         double saldoR = investidor.getCarteira().getMoedas().get(0).getSaldo();
         double cotacaoEt = investidor.getCarteira().getMoedas().get(2).getCotas();
         double saldoE = investidor.getCarteira().getMoedas().get(2).getSaldo();
         double taxaCompraE = 0.01;
-        double compra = (saldoR - valore) * taxaCompraE;
+        double reais = saldoR - valore;
+        double compra = reais * cotacaoEt;
             if (compra < 0){
                 JOptionPane.showMessageDialog(view, "Saldo insuficiente!");
-        }
-            else{
-                Conexao conexao = new Conexao();
-                    try{
-                        Connection conn = conexao.getConnection();
-                        double Diff = cotacaoEt * compra;
-                        double novoSaldoE = saldoE - Diff;
-                        InvestidorDAO dao = new InvestidorDAO(conn);
-                        dao.atualizar(investidor);
-                        dao.atualizarE(investidor);
-                        investidor.getCarteira().getMoedas().get(0).setSaldo(compra);
-                        investidor.getCarteira().getMoedas().get(2).setSaldo(novoSaldoE);
-                        JOptionPane.showMessageDialog(view, "Compra realizada!");
-                    }catch (SQLException e){
-                        JOptionPane.showMessageDialog(view, "Erro de conexao!");
+                return;
+            }
+            double Diff = taxaCompraE * compra;
+            double novoSaldoE = saldoE + Diff;
+            investidor.getCarteira().getMoedas().get(0).setSaldo(reais);
+            investidor.getCarteira().getMoedas().get(2).setSaldo(novoSaldoE);
+            Conexao conexao = new Conexao();
+                try{
+                    Connection conn = conexao.getConnection();
+                    InvestidorDAO dao = new InvestidorDAO(conn);
+                    dao.atualizar(investidor);
+                    dao.atualizarE(investidor);
+                    JOptionPane.showMessageDialog(view, "Compra realizada!");
+                }catch (SQLException e){
+                    JOptionPane.showMessageDialog(view, "Erro de conexao!");
             }
         }
-    }
     
-    public void comprarRip(Investidor investidor){
+    public void comprarRip(){
         String valorE3 = view.getTxtrip().getText();
         double valor = Double.parseDouble(valorE3);
         double saldoR = investidor.getCarteira().getMoedas().get(0).getSaldo();
         double cotacaoRip = investidor.getCarteira().getMoedas().get(3).getCotas();
         double saldoRi = investidor.getCarteira().getMoedas().get(3).getSaldo();
         double taxaCompraRi = 0.01;
-        double compra = (saldoR - valor) * taxaCompraRi;
+        double reais = saldoR - valor;
+        double compra = reais * cotacaoRip;
             if (compra < 0){
                 JOptionPane.showMessageDialog(view, "Saldo insuficiente!");
-        }
-            else{
-                Conexao conexao = new Conexao();
-                    try{
-                        Connection conn = conexao.getConnection();
-                        double Diff = cotacaoRip * compra;
-                        double novoSaldoRip = saldoRi - Diff;
-                        InvestidorDAO dao = new InvestidorDAO(conn);
-                        dao.atualizar(investidor);
-                        dao.atualizarR(investidor);
-                        investidor.getCarteira().getMoedas().get(0).setSaldo(compra);
-                        investidor.getCarteira().getMoedas().get(3).setSaldo(novoSaldoRip);
-                        JOptionPane.showMessageDialog(view, "Compra realizada!");
-                    }catch (SQLException e){
-                        JOptionPane.showMessageDialog(view, "Erro de conexao!");
+                return;
+            }
+            double Diff = taxaCompraRi * compra;
+            double novoSaldoRi = saldoRi + Diff;
+            investidor.getCarteira().getMoedas().get(0).setSaldo(reais);
+            investidor.getCarteira().getMoedas().get(3).setSaldo(novoSaldoRi);
+            Conexao conexao = new Conexao();
+                try{
+                    Connection conn = conexao.getConnection();
+                    InvestidorDAO dao = new InvestidorDAO(conn);
+                    dao.atualizar(investidor);
+                    dao.atualizarR(investidor);
+                    JOptionPane.showMessageDialog(view, "Compra realizada!");
+                }catch (SQLException e){
+                    JOptionPane.showMessageDialog(view, "Erro de conexao!");
             }
         }
-    }
 }

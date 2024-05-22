@@ -3,7 +3,6 @@ package control;
 
 import DAO.InvestidorDAO;
 import DAO.Conexao;
-import DAO.CotaDAO;
 import view.Login;
 import java.sql.Connection;
 import java.sql.ResultSet;

@@ -24,10 +24,7 @@ public class Comprar extends javax.swing.JFrame {
         initComponents();
         lblnome.setText(investidor.getNome());
         lblcpf.setText(investidor.getCPF());
-        cotabit.setText(String.valueOf(investidor.getCarteira().getMoedas().get(1).getSaldo()));
-        cotaet.setText(String.valueOf(investidor.getCarteira().getMoedas().get(2).getSaldo()));
-        cotarip.setText(String.valueOf(investidor.getCarteira().getMoedas().get(3).getSaldo()));
-        controller = new ControllerCompras(this, investidor);
+       controller = new ControllerCompras(this, investidor);
         this.investidor = investidor;
     }
 
@@ -47,13 +44,7 @@ public class Comprar extends javax.swing.JFrame {
         this.cotabit = cotabit;
     }
 
-    public JLabel getCotaet() {
-        return cotaet;
-    }
-
-    public void setCotaet(JLabel cotaet) {
-        this.cotaet = cotaet;
-    }
+    
 
     public JLabel getCotarip() {
         return cotarip;
@@ -171,11 +162,7 @@ public class Comprar extends javax.swing.JFrame {
         lblnome = new javax.swing.JLabel();
         lblcpf = new javax.swing.JLabel();
         btvoltar = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         cotabit = new javax.swing.JLabel();
-        cotaet = new javax.swing.JLabel();
         cotarip = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
@@ -246,12 +233,6 @@ public class Comprar extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setText("Cota:");
-
-        jLabel11.setText("Cota:");
-
-        jLabel12.setText("Cota:");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -274,46 +255,46 @@ public class Comprar extends javax.swing.JFrame {
                                     .addComponent(lblnome)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(3, 3, 3)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
                                     .addComponent(btbit)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtbit, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(1, 1, 1)
-                                                .addComponent(cotabit)))
+                                                .addComponent(jLabel2)))
                                         .addGap(46, 46, 46)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel8)))))
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txteth, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bteth)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cotaet, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
+                                        .addComponent(jLabel8)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btrip)
-                                    .addComponent(jLabel4)
-                                    .addComponent(txtrip, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txteth, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bteth)
+                                    .addComponent(jLabel3))
+                                .addGap(41, 41, 41)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btrip)
+                                            .addComponent(txtrip, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(33, 33, 33)
+                                        .addComponent(jLabel4))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cotarip)))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                                .addComponent(cotabit)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(372, 372, 372)
+                                        .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(373, 373, 373)
+                                        .addComponent(cotarip)))))))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,20 +309,11 @@ public class Comprar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(lblcpf))
-                .addGap(33, 33, 33)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel10)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel12)
-                        .addComponent(cotabit)
-                        .addComponent(cotarip))
-                    .addComponent(cotaet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -355,7 +327,11 @@ public class Comprar extends javax.swing.JFrame {
                     .addComponent(btbit)
                     .addComponent(bteth)
                     .addComponent(btrip))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cotabit)
+                    .addComponent(cotarip))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
         );
@@ -364,15 +340,15 @@ public class Comprar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btbitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbitActionPerformed
-    controller.comprarBit(investidor);
+    controller.comprarBit();
     }//GEN-LAST:event_btbitActionPerformed
 
     private void btethActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btethActionPerformed
-     controller.comprarEth(investidor);
+     controller.comprarEth();
     }//GEN-LAST:event_btethActionPerformed
 
     private void btripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btripActionPerformed
-    controller.comprarRip(investidor);
+    controller.comprarRip();
     }//GEN-LAST:event_btripActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
@@ -394,12 +370,8 @@ public class Comprar extends javax.swing.JFrame {
     private javax.swing.JButton btrip;
     private javax.swing.JButton btvoltar;
     private javax.swing.JLabel cotabit;
-    private javax.swing.JLabel cotaet;
     private javax.swing.JLabel cotarip;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

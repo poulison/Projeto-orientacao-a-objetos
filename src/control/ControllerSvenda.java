@@ -71,10 +71,13 @@ public class ControllerSvenda {
                 double Ethereum = res.getDouble("saldo_eth");
                 double Ripple = res.getDouble("saldo_ripple");
                 ArrayList<Moedas> moedas = new ArrayList<Moedas>();
+                double cotasB = investidor.getCarteira().getMoedas().get(1).getCotas();
+                double cotasE = investidor.getCarteira().getMoedas().get(2).getCotas();
+                double cotasR = investidor.getCarteira().getMoedas().get(3).getCotas();
                 moedas.add(new Real(Real, 0.0));
-                moedas.add(new Bitcoin(Bitcoin, 0.0000029));
-                moedas.add(new Ethereum(Ethereum,0.000064));
-                moedas.add(new Ripple(Ripple, 0.38));
+                moedas.add(new Bitcoin(Bitcoin, cotasB));
+                moedas.add(new Ethereum(Ethereum, cotasE));
+                moedas.add(new Ripple(Ripple, cotasR));
                 Carteira carteira = new Carteira(moedas);
                 Vender v = new Vender(new Investidor(carteira, nome, CPF, senha));
                 v.setVisible(true);

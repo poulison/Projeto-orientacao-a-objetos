@@ -256,11 +256,13 @@ public class Contas extends javax.swing.JFrame {
     }//GEN-LAST:event_btsacarActionPerformed
 
     private void btcomprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcomprarActionPerformed
-        // TODO add your handling code here:
+        SenhaCompra sc = new SenhaCompra(this);
+        sc.setVisible(true);
     }//GEN-LAST:event_btcomprarActionPerformed
 
     private void btvenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvenderActionPerformed
-        // TODO add your handling code here:
+       SenhaVender sv = new SenhaVender(this);
+       sv.setVisible(true);
     }//GEN-LAST:event_btvenderActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed

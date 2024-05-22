@@ -49,7 +49,9 @@ public class ControllerSacar {
         double posdeposito = saldo - valor;
         if (posdeposito < 0){
             JOptionPane.showMessageDialog(view, "Saldo negativo");
+            return;
         }
+        else{
         investidor.getCarteira().getMoedas().get(0).setSaldo(posdeposito);
         Conexao conexao = new Conexao();
        try{
@@ -62,7 +64,7 @@ public class ControllerSacar {
         }
     }
     
-    
+    }
 }
 
 

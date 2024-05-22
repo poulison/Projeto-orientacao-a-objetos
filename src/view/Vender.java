@@ -24,9 +24,6 @@ public class Vender extends javax.swing.JFrame {
         initComponents();
         lblnome.setText(investidor.getNome());
         lblcpf.setText(investidor.getCPF());
-        lblcotab.setText(String.valueOf(investidor.getCarteira().getMoedas().get(1).getSaldo()));
-        lblcotaet.setText(String.valueOf(investidor.getCarteira().getMoedas().get(2).getSaldo()));
-        lblcotarip.setText(String.valueOf(investidor.getCarteira().getMoedas().get(3).getSaldo()));
         controller = new ControllerVendas(this, investidor);
         this.investidor = investidor;
     }
@@ -61,14 +58,6 @@ public class Vender extends javax.swing.JFrame {
 
     public void setBtvoltar(JButton btvoltar) {
         this.btvoltar = btvoltar;
-    }
-
-    public JLabel getCotaet() {
-        return cotaet;
-    }
-
-    public void setCotaet(JLabel cotaet) {
-        this.cotaet = cotaet;
     }
 
     public JLabel getLblcotab() {
@@ -155,12 +144,8 @@ public class Vender extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btvoltar = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        cotaet = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtbit = new javax.swing.JTextField();
@@ -211,12 +196,6 @@ public class Vender extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setText("Cota:");
-
-        jLabel11.setText("Cota:");
-
-        jLabel12.setText("Cota:");
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Central de vendas");
 
@@ -262,28 +241,19 @@ public class Vender extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblnome))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(33, 33, 33)
                                 .addComponent(lblcotab)
-                                .addGap(151, 151, 151)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(184, 184, 184)
                                 .addComponent(lblcotaet)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(116, 116, 116)
-                                        .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel12)
-                                            .addComponent(jLabel9))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btrip)
-                                            .addComponent(txtrip, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lblcotarip))))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(btrip)
+                                    .addComponent(txtrip, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblcotarip)
+                                    .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(81, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -308,11 +278,6 @@ public class Vender extends javax.swing.JFrame {
                 .addGap(216, 216, 216)
                 .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(296, 296, 296)
-                    .addComponent(cotaet, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(286, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,9 +299,6 @@ public class Vender extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
                     .addComponent(lblcotab)
                     .addComponent(lblcotaet)
                     .addComponent(lblcotarip))
@@ -353,29 +315,24 @@ public class Vender extends javax.swing.JFrame {
                     .addComponent(btbit)
                     .addComponent(bteth)
                     .addComponent(btrip))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(207, 207, 207)
-                    .addComponent(cotaet, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(243, Short.MAX_VALUE)))
+                .addGap(52, 52, 52))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btbitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbitActionPerformed
-    controller.venderBit(investidor);
+    controller.venderBit();
     }//GEN-LAST:event_btbitActionPerformed
 
     private void btethActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btethActionPerformed
-    controller.venderEth(investidor);
+    controller.venderEth();
     }//GEN-LAST:event_btethActionPerformed
 
     private void btripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btripActionPerformed
-    controller.venderRip(investidor);
+    controller.venderRip();
     }//GEN-LAST:event_btripActionPerformed
 
     private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
@@ -397,11 +354,7 @@ public class Vender extends javax.swing.JFrame {
     private javax.swing.JButton bteth;
     private javax.swing.JButton btrip;
     private javax.swing.JButton btvoltar;
-    private javax.swing.JLabel cotaet;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;

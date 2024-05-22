@@ -19,7 +19,6 @@ public class Carteira {
     }
     
     
-    
     public Carteira(ArrayList<Moedas> moedas){
         this.moedas = moedas;
     }

@@ -5,7 +5,7 @@
 package view;
 
 
-import DAO.CotaDAO;
+
 import DAO.InvestidorDAO;
 import control.ControllerMenu;
 import java.sql.Connection;
@@ -31,8 +31,7 @@ public class Menu extends javax.swing.JFrame {
         txtnome.setText(investidor.getNome());
         txtcpf.setText(investidor.getCPF());
         txtsenha.setText(investidor.getSenha());
-        controller = new ControllerMenu(this, investidor);
-        controller.cria(investidor);
+        controller = new ControllerMenu(this, investidor);  
         this.investidor = investidor;
     }
 
