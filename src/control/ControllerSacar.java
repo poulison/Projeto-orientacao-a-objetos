@@ -43,10 +43,10 @@ public class ControllerSacar {
     
     
     public void saque(){
-        String quantiaStr = view.getTxtsaque().getText();
-        double quantia = Double.parseDouble(quantiaStr);
+        String valorE = view.getTxtsaque().getText();
+        double valor = Double.parseDouble(valorE);
         double saldo = investidor.getCarteira().getMoedas().get(0).getSaldo();
-        double posdeposito = saldo - quantia;
+        double posdeposito = saldo - valor;
         if (posdeposito < 0){
             JOptionPane.showMessageDialog(view, "Saldo negativo");
         }

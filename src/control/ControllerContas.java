@@ -6,7 +6,6 @@ package control;
 
 import DAO.Conexao;
 import DAO.CotaDAO;
-import DAO.InvestidorDAO;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -31,7 +30,7 @@ public class ControllerContas {
         try{
             Connection conn = conexao.getConnection();
             CotaDAO dao = new CotaDAO(conn);
-            dao.atualizar(investidor);
+            dao.atualizarC(investidor);
             JOptionPane.showMessageDialog(view, "Atualizadas!");
         } catch (SQLException e){
             JOptionPane.showMessageDialog(view, "Erro!");

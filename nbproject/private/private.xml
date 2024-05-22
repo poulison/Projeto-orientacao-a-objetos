@@ -2,6 +2,37 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerCompras.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/DAO/InvestidorDAO.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerDeposito.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerCadastro.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Saldo.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerSaldo.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Vender.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Sacar.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/DAO/CotaDAO.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Cadastro.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerMenu.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Menu.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/model/Carteira.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerSvenda.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerSacar.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/ConsultarExtrato.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Contas.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/model/Bitcoin.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerLogin.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/SenhaVender.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Comprar.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Login.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerLoginSaldo.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Depositar.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/Senha.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/view/SenhaCompra.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerVendas.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerContas.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/model/Ethereum.java</file>
+            <file>file:/C:/Users/Paulo/Documents/Projeto-orientacao-a-objetos/Projeto-orientacao-a-objetos/src/control/ControllerScompra.java</file>
+        </group>
     </open-files>
 </project-private>

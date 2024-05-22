@@ -26,7 +26,7 @@ public class CotaDAO {
     }
 
 
-    public void atualizar(Investidor investidor) throws SQLException{
+    public void atualizarC(Investidor investidor) throws SQLException{
         String sql = "update moedas set bitcoin = ?, ethereum = ?, ripple = ?";
         double cotacaoBit = investidor.getCarteira().getMoedas().get(1).getCotas();
         double cotacaoEth = investidor.getCarteira().getMoedas().get(2).getCotas();
@@ -46,6 +46,14 @@ public class CotaDAO {
         statement.setDouble(3, cotacaoRipAtualizada);
         statement.execute();
         conn.close();
+    }
+    
+    public void gerar(Investidor investidor) throws SQLException{
+        String sql1 = "INSERT INTO moedas(\n"+
+        "id, bitcoin, ethereum, riple)"+
+        "VALUES(1, 358097.15, 19417.20, 2.60);";
+        PreparedStatement statement1 = conn.prepareStatement(sql1);
+        statement1.execute();
     }
 
 }

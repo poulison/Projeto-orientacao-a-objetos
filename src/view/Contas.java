@@ -27,7 +27,15 @@ public class Contas extends javax.swing.JFrame {
         controller = new ControllerContas(this, investidor);
         this.investidor = investidor;
     }
+    
+    public JLabel getLblcpf() {
+        return lblcpf;
+    }
 
+    public void setLblcpf(JLabel lblcpf) {
+        this.lblcpf = lblcpf;
+    }
+    
     public Investidor getInvestidor() {
         return investidor;
     }
@@ -74,14 +82,6 @@ public class Contas extends javax.swing.JFrame {
 
     public void setBtvoltar(JButton btvoltar) {
         this.btvoltar = btvoltar;
-    }
-
-    public JLabel getLblcpf() {
-        return lblcpf;
-    }
-
-    public void setLblcpf(JLabel lblcpf) {
-        this.lblcpf = lblcpf;
     }
 
     public JLabel getLblnome() {

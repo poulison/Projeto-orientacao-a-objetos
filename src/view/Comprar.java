@@ -4,6 +4,12 @@
  */
 package view;
 
+import control.ControllerCompras;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import model.Investidor;
+
 /**
  *
  * @author Paulo
@@ -12,11 +18,131 @@ public class Comprar extends javax.swing.JFrame {
 
     /**
      * Creates new form Comprar
+     * @param investidor
      */
-    public Comprar() {
+    public Comprar(Investidor investidor) {
         initComponents();
+        lblnome.setText(investidor.getNome());
+        lblcpf.setText(investidor.getCPF());
+        cotabit.setText(String.valueOf(investidor.getCarteira().getMoedas().get(1).getSaldo()));
+        cotaet.setText(String.valueOf(investidor.getCarteira().getMoedas().get(2).getSaldo()));
+        cotarip.setText(String.valueOf(investidor.getCarteira().getMoedas().get(3).getSaldo()));
+        controller = new ControllerCompras(this, investidor);
+        this.investidor = investidor;
     }
 
+    public Investidor getInvestidor() {
+        return investidor;
+    }
+
+    public void setInvestidor(Investidor investidor) {
+        this.investidor = investidor;
+    }
+
+    public JLabel getCotabit() {
+        return cotabit;
+    }
+
+    public void setCotabit(JLabel cotabit) {
+        this.cotabit = cotabit;
+    }
+
+    public JLabel getCotaet() {
+        return cotaet;
+    }
+
+    public void setCotaet(JLabel cotaet) {
+        this.cotaet = cotaet;
+    }
+
+    public JLabel getCotarip() {
+        return cotarip;
+    }
+
+    public void setCotarip(JLabel cotarip) {
+        this.cotarip = cotarip;
+    }
+    
+    public ControllerCompras getController() {
+        return controller;
+    }
+
+    public void setController(ControllerCompras controller) {
+        this.controller = controller;
+    }
+
+    public JButton getBtbit() {
+        return btbit;
+    }
+
+    public void setBtbit(JButton btbit) {
+        this.btbit = btbit;
+    }
+
+    public JButton getBteth() {
+        return bteth;
+    }
+
+    public void setBteth(JButton bteth) {
+        this.bteth = bteth;
+    }
+
+    public JButton getBtrip() {
+        return btrip;
+    }
+
+    public void setBtrip(JButton btrip) {
+        this.btrip = btrip;
+    }
+
+    public JButton getBtvoltar() {
+        return btvoltar;
+    }
+
+    public void setBtvoltar(JButton btvoltar) {
+        this.btvoltar = btvoltar;
+    }
+
+    public JLabel getLblcpf() {
+        return lblcpf;
+    }
+
+    public void setLblcpf(JLabel lblcpf) {
+        this.lblcpf = lblcpf;
+    }
+
+    public JLabel getLblnome() {
+        return lblnome;
+    }
+
+    public void setLblnome(JLabel lblnome) {
+        this.lblnome = lblnome;
+    }
+
+    public JTextField getTxtbit() {
+        return txtbit;
+    }
+
+    public void setTxtbit(JTextField txtbit) {
+        this.txtbit = txtbit;
+    }
+
+    public JTextField getTxteth() {
+        return txteth;
+    }
+
+    public void setTxteth(JTextField txteth) {
+        this.txteth = txteth;
+    }
+
+    public JTextField getTxtrip() {
+        return txtrip;
+    }
+
+    public void setTxtrip(JTextField txtrip) {
+        this.txtrip = txtrip;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,27 +152,269 @@ public class Comprar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtbit = new javax.swing.JTextField();
+        txteth = new javax.swing.JTextField();
+        txtrip = new javax.swing.JTextField();
+        btbit = new javax.swing.JButton();
+        bteth = new javax.swing.JButton();
+        btrip = new javax.swing.JButton();
+        lblnome = new javax.swing.JLabel();
+        lblcpf = new javax.swing.JLabel();
+        btvoltar = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        cotabit = new javax.swing.JLabel();
+        cotaet = new javax.swing.JLabel();
+        cotarip = new javax.swing.JLabel();
+
+        jRadioButton1.setText("jRadioButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("Central de compras");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("Bitcoin");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("Ethereum");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("Ripple");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Nome:");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setText("Senha:");
+
+        jLabel7.setText("Valor:");
+
+        jLabel8.setText("Valor:");
+
+        jLabel9.setText("Valor:");
+
+        txtbit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtbitActionPerformed(evt);
+            }
+        });
+
+        btbit.setText("Comprar");
+        btbit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbitActionPerformed(evt);
+            }
+        });
+
+        bteth.setText("Comprar");
+        bteth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btethActionPerformed(evt);
+            }
+        });
+
+        btrip.setText("Comprar");
+        btrip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btripActionPerformed(evt);
+            }
+        });
+
+        lblnome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        lblcpf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        btvoltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btvoltar.setText("Voltar");
+        btvoltar.setToolTipText("");
+        btvoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btvoltarActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Cota:");
+
+        jLabel11.setText("Cota:");
+
+        jLabel12.setText("Cota:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblcpf)
+                                    .addComponent(lblnome)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(3, 3, 3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(btbit)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtbit, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(1, 1, 1)
+                                                .addComponent(cotabit)))
+                                        .addGap(46, 46, 46)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel11)
+                                            .addComponent(jLabel8)))))
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txteth, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bteth)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cotaet, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btrip)
+                                    .addComponent(jLabel4)
+                                    .addComponent(txtrip, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cotarip)))))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(lblnome))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(lblcpf))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel10)
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel12)
+                        .addComponent(cotabit)
+                        .addComponent(cotarip))
+                    .addComponent(cotaet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(txtbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txteth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtrip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btbit)
+                    .addComponent(bteth)
+                    .addComponent(btrip))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addComponent(btvoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btbitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbitActionPerformed
+    controller.comprarBit(investidor);
+    }//GEN-LAST:event_btbitActionPerformed
+
+    private void btethActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btethActionPerformed
+     controller.comprarEth(investidor);
+    }//GEN-LAST:event_btethActionPerformed
+
+    private void btripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btripActionPerformed
+    controller.comprarRip(investidor);
+    }//GEN-LAST:event_btripActionPerformed
+
+    private void btvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvoltarActionPerformed
+    this.setVisible(false);
+    }//GEN-LAST:event_btvoltarActionPerformed
+
+    private void txtbitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtbitActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
-
+    private ControllerCompras controller;
+    private Investidor investidor;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btbit;
+    private javax.swing.JButton bteth;
+    private javax.swing.JButton btrip;
+    private javax.swing.JButton btvoltar;
+    private javax.swing.JLabel cotabit;
+    private javax.swing.JLabel cotaet;
+    private javax.swing.JLabel cotarip;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JLabel lblcpf;
+    private javax.swing.JLabel lblnome;
+    private javax.swing.JTextField txtbit;
+    private javax.swing.JTextField txteth;
+    private javax.swing.JTextField txtrip;
     // End of variables declaration//GEN-END:variables
+
+   
 }

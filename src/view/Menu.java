@@ -5,7 +5,10 @@
 package view;
 
 
+import DAO.CotaDAO;
+import DAO.InvestidorDAO;
 import control.ControllerMenu;
+import java.sql.Connection;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import model.Investidor;
@@ -29,6 +32,7 @@ public class Menu extends javax.swing.JFrame {
         txtcpf.setText(investidor.getCPF());
         txtsenha.setText(investidor.getSenha());
         controller = new ControllerMenu(this, investidor);
+        controller.cria(investidor);
         this.investidor = investidor;
     }
 
@@ -144,7 +148,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel4.setText("Senha:");
 
-        jLabel5.setText("Dados investidor -->");
+        jLabel5.setText("Dados investidor :");
 
         txtcpf.setEditable(false);
         txtcpf.setBorder(null);

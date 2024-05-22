@@ -1,41 +1,37 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package view;
 
-
-import control.ControllerLoginSaldo;
+import control.ControllerScompra;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import model.Investidor;
 
-
 /**
  *
  * @author Paulo
  */
-public class Senha extends javax.swing.JFrame {
-    private Menu M;
-    public Senha(Menu M) {
+public class SenhaCompra extends javax.swing.JFrame {
+
+    /**
+     * Creates new form SenhaCompra
+     */
+    private Contas s;
+    public SenhaCompra(Contas s) {
         initComponents();
-        controller = new ControllerLoginSaldo(this, investidor, M); 
-        this.M = M;
+        controller = new ControllerScompra(this, investidor, s); 
+        this.s= s;
         
     }
-    
-    
     public Investidor getInvestidor() {
         return investidor;
     }
 
     public void setInvestidor(Investidor investidor) {
         this.investidor = investidor;
-    }
-    public JLabel getLblcpf() {
-        return lblcpf;
-    }
-
-    public void setLblcpf(JLabel lblcpf) {
-        this.lblcpf = lblcpf;
     }
      
     public JTextField getTxtsenha() {
@@ -61,7 +57,6 @@ public class Senha extends javax.swing.JFrame {
     public void setLblsenha(JLabel lblsenha) {
         this.lblsenha = lblsenha;
     }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -75,8 +70,6 @@ public class Senha extends javax.swing.JFrame {
         lblsenha = new javax.swing.JLabel();
         Txtsenha = new javax.swing.JTextField();
         btsennha = new javax.swing.JButton();
-        lblcpf = new javax.swing.JLabel();
-        lblnome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,64 +93,48 @@ public class Senha extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(lblcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(36, 36, 36)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(btsennha))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(lblnome))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(52, 52, 52)
                         .addComponent(lblsenha)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                        .addComponent(Txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(btsennha)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(58, 58, 58)
                 .addComponent(jLabel1)
-                .addGap(12, 12, 12)
-                .addComponent(lblcpf)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblnome)
-                .addGap(18, 18, 18)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblsenha)
                     .addComponent(Txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                .addGap(42, 42, 42)
                 .addComponent(btsennha)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btsennhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsennhaActionPerformed
-    controller.checar();
-    this.setVisible(false);
+        controller.checar();
+        this.setVisible(false);
     }//GEN-LAST:event_btsennhaActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    
     private Investidor investidor; 
-    private ControllerLoginSaldo controller;
+    private ControllerScompra controller;
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Txtsenha;
     private javax.swing.JButton btsennha;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lblcpf;
-    private javax.swing.JLabel lblnome;
     private javax.swing.JLabel lblsenha;
     // End of variables declaration//GEN-END:variables
-
-
 }

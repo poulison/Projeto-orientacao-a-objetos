@@ -38,10 +38,10 @@ public class ControllerDeposito {
     
     
     public void depositos(){
-        String quantiaStr = view.getTxtdeposito().getText();
-        double quantia = Double.parseDouble(quantiaStr);
+        String valorE = view.getTxtdeposito().getText();
+        double valor = Double.parseDouble(valorE);
         double saldo = investidor.getCarteira().getMoedas().get(0).getSaldo();
-        double posdeposito = saldo + quantia;
+        double posdeposito = saldo + valor;
         investidor.getCarteira().getMoedas().get(0).setSaldo(posdeposito);
         Conexao conexao = new Conexao();
        try{
