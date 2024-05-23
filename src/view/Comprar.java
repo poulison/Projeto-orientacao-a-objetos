@@ -24,7 +24,7 @@ public class Comprar extends javax.swing.JFrame {
         initComponents();
         lblnome.setText(investidor.getNome());
         lblcpf.setText(investidor.getCPF());
-       controller = new ControllerCompras(this, investidor);
+        controller = new ControllerCompras(this, investidor);
         this.investidor = investidor;
     }
 

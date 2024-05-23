@@ -22,6 +22,19 @@ public class ControllerCadastro {
         String CPF = view.getTxtCPF().getText();
         String senha = view.getTxtsenha().getText();
         
+       if (senha.length() != 6){
+           return;
+       }
+       if (CPF.contains("-") == true){
+            JOptionPane.showMessageDialog(view,"Voce esta usando um caractere especial ( - ) ");
+            return;
+       }else {
+            if (CPF.contains(".") == true){
+               JOptionPane.showMessageDialog(view,"Voce esta usando um caractere especial "
+                        + "( . ) ");
+                return;
+            } 
+       
         Investidor investidor = new Investidor(nome, CPF, senha);
         Conexao conexao = new Conexao();
         
@@ -35,5 +48,6 @@ public class ControllerCadastro {
         } catch (SQLException e){
             JOptionPane.showMessageDialog(view, "Usuario nao Cadastrado!");
         }
+    }
     }
 }

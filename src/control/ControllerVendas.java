@@ -9,7 +9,11 @@ import DAO.InvestidorDAO;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
+import model.Bitcoin;
+import model.Ethereum;
 import model.Investidor;
+import model.Moedas;
+import model.Ripple;
 import view.Vender;
 
 /**
@@ -48,15 +52,18 @@ public class ControllerVendas {
         double saldoR = investidor.getCarteira().getMoedas().get(0).getSaldo();
         double cotacaoBit = investidor.getCarteira().getMoedas().get(1).getCotas();
         double saldoB = investidor.getCarteira().getMoedas().get(1).getSaldo();
-        double taxaVendaB = 0.03;
+        double valorB = valor * cotacaoBit;
+        
+        Moedas bitItem = investidor.getCarteira().getMoedas().get(1);
+        Bitcoin bitcoin = (Bitcoin) bitItem;
+        double taxaVendaB = bitcoin.getTaxaVenda();
+        
         double reais = saldoR + valor;
-        double venda = reais * cotacaoBit;
-                 if (saldoB < 0){
-                JOptionPane.showMessageDialog(view, "Saldo insuficiente!");
-                return;
-            }
-            double Diff = taxaVendaB * venda;
-            double novoSaldoB = saldoB - Diff;
+        double diff = valorB * (1 + taxaVendaB);
+        double novoSaldoB = saldoB - diff;
+        if(novoSaldoB < 0){
+            JOptionPane.showMessageDialog(view, "Saldo negativo");
+        } else {
             investidor.getCarteira().getMoedas().get(0).setSaldo(reais);
             investidor.getCarteira().getMoedas().get(1).setSaldo(novoSaldoB);
             Conexao conexao = new Conexao();
@@ -64,29 +71,34 @@ public class ControllerVendas {
                     Connection conn = conexao.getConnection();
                     InvestidorDAO dao = new InvestidorDAO(conn);
                     dao.atualizar(investidor);
-                    dao.atualizarR(investidor);
-                    JOptionPane.showMessageDialog(view, "Compra realizada!");
+                    dao.atualizarB(investidor);
+                    dao.geraExtratobitV(investidor, valor);
+                    JOptionPane.showMessageDialog(view, "Venda realizada!");
                 }catch (SQLException e){
                     JOptionPane.showMessageDialog(view, "Erro de conexao!");
-            }
+                }
         }
+    }
     
     
     public void venderEth(){
-        String valorE2 = view.getTxteth().getText();
-        double valore = Double.parseDouble(valorE2);
+        String valorEx = view.getTxtbit().getText();
+        double valor = Double.parseDouble(valorEx);
         double saldoR = investidor.getCarteira().getMoedas().get(0).getSaldo();
-        double cotacaoEt = investidor.getCarteira().getMoedas().get(2).getCotas();
+        double cotacaoEth = investidor.getCarteira().getMoedas().get(2).getCotas();
         double saldoE = investidor.getCarteira().getMoedas().get(2).getSaldo();
-        double taxaVendaE = 0.02;
-        double reais = saldoR + valore;
-        double venda = reais * cotacaoEt;
-                 if (saldoE < 0){
-                JOptionPane.showMessageDialog(view, "Saldo insuficiente!");
-                return;
-            }
-            double Diff = taxaVendaE * venda;
-            double novoSaldoE = saldoE - Diff;
+        double valorE = valor * cotacaoEth;
+        
+        Moedas ethItem = investidor.getCarteira().getMoedas().get(2);
+        Ethereum ethereum = (Ethereum) ethItem;
+        double taxaVendaE = ethereum.getTaxaVenda();
+        
+        double reais = saldoR + valor;
+        double diff = valorE * (1 + taxaVendaE);
+        double novoSaldoE = saldoE - diff;
+        if(novoSaldoE < 0){
+            JOptionPane.showMessageDialog(view, "Saldo negativo");
+        } else {
             investidor.getCarteira().getMoedas().get(0).setSaldo(reais);
             investidor.getCarteira().getMoedas().get(2).setSaldo(novoSaldoE);
             Conexao conexao = new Conexao();
@@ -94,28 +106,33 @@ public class ControllerVendas {
                     Connection conn = conexao.getConnection();
                     InvestidorDAO dao = new InvestidorDAO(conn);
                     dao.atualizar(investidor);
-                    dao.atualizarR(investidor);
-                    JOptionPane.showMessageDialog(view, "Compra realizada!");
+                    dao.atualizarE(investidor);
+                    dao.geraExtratoethV(investidor, valor);
+                    JOptionPane.showMessageDialog(view, "Venda realizada!");
                 }catch (SQLException e){
                     JOptionPane.showMessageDialog(view, "Erro de conexao!");
-            }
+                }
         }
+    }
     
     public void venderRip(){
-        String valorE3 = view.getTxtrip().getText();
-        double valor = Double.parseDouble(valorE3);
+        String valorEx = view.getTxtbit().getText();
+        double valor = Double.parseDouble(valorEx);
         double saldoR = investidor.getCarteira().getMoedas().get(0).getSaldo();
         double cotacaoRip = investidor.getCarteira().getMoedas().get(3).getCotas();
         double saldoRi = investidor.getCarteira().getMoedas().get(3).getSaldo();
-        double taxaVendaRi = 0.01;
+        double valorRi = valor * cotacaoRip;
+        
+        Moedas ripItem = investidor.getCarteira().getMoedas().get(3);
+        Ripple ripple = (Ripple) ripItem;
+        double taxaVendaE = ripple.getTaxaVenda();
+        
         double reais = saldoR + valor;
-        double venda = reais * cotacaoRip;
-            if (saldoRi < 0){
-                JOptionPane.showMessageDialog(view, "Saldo insuficiente!");
-                return;
-            }
-            double Diff = taxaVendaRi * venda;
-            double novoSaldoRi = saldoRi - Diff;
+        double diff = valorRi * (1 + taxaVendaE);
+        double novoSaldoRi = saldoRi - diff;
+        if(novoSaldoRi < 0){
+            JOptionPane.showMessageDialog(view, "Saldo negativo");
+        } else {
             investidor.getCarteira().getMoedas().get(0).setSaldo(reais);
             investidor.getCarteira().getMoedas().get(3).setSaldo(novoSaldoRi);
             Conexao conexao = new Conexao();
@@ -124,9 +141,11 @@ public class ControllerVendas {
                     InvestidorDAO dao = new InvestidorDAO(conn);
                     dao.atualizar(investidor);
                     dao.atualizarR(investidor);
-                    JOptionPane.showMessageDialog(view, "Compra realizada!");
+                    dao.geraExtratoripV(investidor, valor);
+                    JOptionPane.showMessageDialog(view, "Venda realizada!");
                 }catch (SQLException e){
                     JOptionPane.showMessageDialog(view, "Erro de conexao!");
-            }
+                }
         }
+    }
 }

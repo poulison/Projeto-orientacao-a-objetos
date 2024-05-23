@@ -48,6 +48,7 @@ public class ControllerDeposito {
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
             dao.atualizar(investidor);
+            dao.geraExtratodep(investidor, valor);
             JOptionPane.showMessageDialog(view, "Deposito feito!");
        }catch (SQLException e){
             JOptionPane.showMessageDialog(view, "Erro de conexao!");

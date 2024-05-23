@@ -46,7 +46,9 @@ public class ControllerSacar {
         String valorE = view.getTxtsaque().getText();
         double valor = Double.parseDouble(valorE);
         double saldo = investidor.getCarteira().getMoedas().get(0).getSaldo();
+        System.out.println("saldo do investidor: " + investidor.getCarteira().getMoedas().get(0).getSaldo());
         double posdeposito = saldo - valor;
+        System.out.println(posdeposito);
         if (posdeposito < 0){
             JOptionPane.showMessageDialog(view, "Saldo negativo");
             return;
@@ -58,11 +60,12 @@ public class ControllerSacar {
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
             dao.atualizar(investidor);
+            dao.geraExtratosac(investidor, valor);
             JOptionPane.showMessageDialog(view, "Saque feito!");
        }catch (SQLException e){
             JOptionPane.showMessageDialog(view, "Erro de conexao!");
         }
-    }
+        }
     
     }
 }

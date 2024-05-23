@@ -28,7 +28,7 @@ public class Saldo extends javax.swing.JFrame {
         lblethereum.setText(String.valueOf(investidor.getCarteira().getMoedas().get(2).getSaldo()));
         lblripple.setText(String.valueOf(investidor.getCarteira().getMoedas().get(3).getSaldo()));
         controller = new ControllerSaldo(this);
-        
+        this.investidor = investidor;
     }
     
     
@@ -254,7 +254,7 @@ public class Saldo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btextratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btextratoActionPerformed
-        ConsultarExtrato e = new ConsultarExtrato();
+        ConsultarExtrato e = new ConsultarExtrato(investidor);
         e.setVisible(true);
     }//GEN-LAST:event_btextratoActionPerformed
 

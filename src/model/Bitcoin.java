@@ -9,8 +9,6 @@ package model;
  * @author Paulo
  */
 public class Bitcoin extends Moedas implements Tarifacao{
-    private static double taxaCompra = 0.02;
-    private static double taxaVenda = 0.03;
     
     public Bitcoin(double saldo, double cotas){
         super(saldo, cotas);
@@ -25,11 +23,11 @@ public class Bitcoin extends Moedas implements Tarifacao{
     
     @Override
     public double getTaxaCompra() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 0.02;
     }
 
     @Override
     public double getTaxaVenda() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 0.03;
     }
 }
